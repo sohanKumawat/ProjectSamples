@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+      http://www.springframework.org/schema/jdbc
+      http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+	<!-- xmlns:rabbit="http://www.springframework.org/schema/rabbit -->
+	<!-- http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.1.xsd -->
+	<!-- How to include more then one base package -->
+
+	<context:annotation-config />
+	<context:component-scan base-package="ai.msg" />
+	<mvc:annotation-driven />
+
+	<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+	<bean
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+		<bean id="springSecurityFilterChain" class="org.springframework.web.filter.DelegatingFilterProxy"/> 
+<!-- 
+	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"> 
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<property name="acquireIncrement" value="${jdbc.c3p0.acquireIncrement}" />
+		<property name="minPoolSize" value="${jdbc.c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${jdbc.c3p0.maxPoolSize}" />
+		<property name="maxIdleTime" value="${jdbc.c3p0.maxIdleTime}" />
+	</bean>
+	
+ <bean id="transactionManager"
+   class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
+     -->
+    
+   
+    <!-- <bean id="springSecurityFilterChain" class="org.springframework.web.filter.DelegatingFilterProxy"/> 
+     -->
+    <!-- <mvc:interceptors>
+		<bean class="ai.msg.training.portal.interceptor.LoginInterceptor" />
+	</mvc:interceptors>
+	 -->
+	<!--  <bean id="loginDao" 
+      class="ai.msg.training.portal.daoImpl.LoginDaoImpl">
+     <property name="dataSource"  ref="dataSource" />    
+   </bean> -->
+	
+	<!-- <bean class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" 
+		id="namedParameterJdbcTemplate"> <property name="dataSource" ref="dataSource"></property> 
+		</bean> -->
+
+	<!-- multiple fine configuration or modularization -->
+	
+	<!-- Below configuration has been added to enable in memory DB HSQLDB -->
+	<!-- <jd:embedded-database id="dataSource1" type="HSQL"> <jd:script location="classpath:schema.sql"/> 
+		<jd:script location="classpath:test-data.sql"/> </jd:embedded-database> -->
+	<!-- Rabbit MQ Integration -->
+</beans>

@@ -1,0 +1,317 @@
+<link href="css/response.css" media="screen" rel="stylesheet" type="text/css">
+<!--Header Part-->
+<div class="TopHeadSticky">
+  <header class="page-header">
+        <h1>Messages > Responses > $topic_name</h1>
+    <div class="pull-right" style="position:relative;">
+<button class="btn btnEllipsis" style="margin:0px 8px 0px 10px" type="button"><span></span><span></span><span></span></button>
+<div class="popstatus">
+<ul>
+<li>Last saved 3 minutes ago.</li>
+<li><a href="javascript:void(0);">Discard Changes</a></li>
+</ul>
+</div>
+</div>
+<button class="btn btnWhite pull-right PadLR20px" type="button" style="">Save</button>
+<div class="clearfix"></div>
+</header>
+  <div class="clearfix"></div>
+</div>
+<!-- End Header Part -->
+<div class="inputHeight">
+  <div class="container-fluid" >
+  <form>
+                    <div style="padding:5px 0px; width:50%;" class="form-group">
+                       <input type="text"  placeholder="Enter keywords, intent names or conditions…" class="form-control bgf7f9fa">
+                    </div>
+                  </form>
+                  </div>
+                  </div>
+<div class="contentMainArea">
+  <div class="container-fluid" >
+  
+ 
+    <div class="msgContainer">
+   
+<div class="struTable">
+<div class="col">Id</div>
+<div class="col" style="padding:0px;">
+<div style="padding:11px 8px;">Rules</div>
+<div class="mainLP">
+<div class="LP one">Intent</div>
+<div class="LP two">Conditions</div>
+</div>
+</div>
+<div class="col">Responses</div>
+<div class="col">Active</div>
+</div>
+<div class="bodyTablescroll" style="overflow:auto;">
+
+<table class="strutableBody">
+<tr>
+<td>1931</td>
+<td>What is Condomn? </td>
+<td>
+<div class="responseBlk"  ng-repeat="item in items">
+<div style="width:100%">
+<form class="form-inline">
+   <input type="text"  class="form-control"placeholder="Name" style="width:45%" />
+    <label>=</label>
+    <input type="text"  class="form-control"placeholder="Value" style="width:45%"  />  
+</form>
+</div>
+<div><a href="javascript:void(0);" class="delete" data-toggle="modal" data-target="#delete" >Delete</a></div>
+</div>
+</td>
+<td>
+<div class="responseBlk">
+<div>That's a big question right there - but one every human has thought at one time or another and has worried about. It just so happens you're talking to the right artificial-intelligent robot! The first thing to say is that there is no singular definition of what sex is. I'm learning new things about sex everyday! </div>
+<div><a href="javascript:void(0);" class="delete" data-toggle="modal" data-target="#delete">Delete</a></div>
+</div>
+<div class="responseBlk">
+<div>I imagine you're referring to the physical activity that is called 'Sexual Intercourse'. Sexual Intercourse as a dictionary definition is 'the physical activity between people involving their sexual organs'. Would you like me to go into a little more detail about the ins and outs of the most popular forms of sexual intercourse </div>
+<div><a href="javascript:void(0);" class="delete" data-toggle="modal" data-target="#delete">Delete</a></div>
+</div>
+<div class="responseBlk">
+<div>Your personal definition of sex changes and morphs based on many things - your level of experience, your age, your gender or your sexuality. Sex is as individual as you are. </div>
+<div><a href="javascript:void(0);" class="delete" data-toggle="modal" data-target="#delete"></a></div>
+</div>
+<div  ng-repeat="x in textObject track by $index" class="responseBlk">
+<div style="width:100%;">
+<textarea></textarea>
+</div>
+<div><a href="javascript:void(0);" ng-click="deleteTextArea($index)" class="delete">add</a></div>
+</div>
+
+</td>
+<td><div class="dplayTabCell">
+              <label class="switch">
+    	<input class="switch-input" type="checkbox" />
+    	<span class="switch-label" data-on="On" data-off="Off"></span> 
+    	<span class="switch-handle"></span> 
+    </label>
+        </div></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><div class="addCondiClick">
+<a href="javascript:void(0);" ng-click="add()"><span class="">Add a Condtion</span> <i class="fa fa-sort-desc iStyle"></i></a>
+</div></td>
+<td><div class="HitForOutside" style="position:relative;">
+<div class="addmsgClick"  ng-click="addmsgFrame()">
+<a href="javascript:void(0);" ng-class="{'addmsgClickActive' : addMsgPop==false}">
+<span class="">Add a Message</span> 
+<i class="fa fa-sort-desc iStyle"></i>
+</a>
+</div>
+<div class="addmsg" ng-hide="addMsgPop">
+<ul>
+<li><a href="javascript:void(0);" ng-click="textMessageOpen();">Text Message</a></li>
+<li><a href="javascript:void(0);" ng-click="liDismis();" data-toggle="modal" data-target="#ImgVideo">Image & Video</a></li>
+<li><a href="javascript:void(0);" ng-click="liDismis();">Card</a></li>
+</ul>
+<div class="clearfix"></div>
+</div>
+</div></td>
+<td></td>
+</tr>
+</table>
+</div>
+</div>
+    <div class="clearfix"></div>
+  </div>
+
+</div>
+<div class="botSpace">&nbsp;</div>
+<!--Delete Popup-->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="vertical-alignment-helper">
+ <div class="modal-dialog vertical-align-center" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+      <div class="pad15px">
+       <p style="font-size:18px;">An quo quot melius constituto. Duis dicta ludus ad nam, id detraxit corrumpit mea.</p>
+      </div>
+                      
+                      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btnGrey btn-md" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btndelete btn-md">Delete</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!--add images/ video-->
+<div class="modal fade" id="ImgVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="vertical-alignment-helper">
+  <div class="modal-dialog vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h4 class="modal-title settingHeading" id="myModalLabel">Add an Image/Video</h4>
+      </div>
+      <div class="modal-body">
+
+<div class="tabImgVdeoCon">
+              <ul ng-init="tabRight = 5" class="tabImgVdeo">
+          <li ng-class="{activestateN:tabRight===4}" class=""><a class="profile" ng-click="tabRight = 4" href="">Upload from Computer</a></li>
+          <li ng-class="{activestateN:tabRight===5}" class="activestateN"><a class="cards" ng-click="tabRight = 5" href="">Choose from Library</a></li>
+              </ul>
+            </div>
+
+      
+<div class="imgVideoContainer" style="max-height:300px; overflow:auto; margin:10px;">
+              <div ng-show="tabRight === 4">
+              Upload from Computer
+              </div>
+              <div ng-show="tabRight === 5">
+             
+             <ul class="imgLabs">
+             <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+
+                        <li> 
+             <a href="javascript:void(0);">
+             <div class="imgblock"> </div>
+             <div class="text">Image</div>
+             </a>
+             </li>
+             
+             
+             </ul>
+             
+              </div>
+              </div>
+      
+      
+     
+       
+                      
+                      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btnGrey btn-md" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btnWhite btn-md">Save</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+  
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script> 
+<script type="text/javascript" src="js/mainScript.js"></script> 
+<script type="text/javascript" src="js/enscroll-0.6.1.min.js"></script>
+<script>
+$(document).ready(function() {
+var MsgPgHeight = $(window).height() - $(".TopHeadSticky").outerHeight(true) - $(".botSpace").height() -$('.inputHeight').height()  + "px";
+$(".contentMainArea, .msgContainer").height(MsgPgHeight);
+
+var restHeight = $(".msgContainer").height() - $(".struTable").height() + "px";
+$(".bodyTablescroll").height(restHeight);
+
+
+$('.bodyTablescroll').enscroll({
+    showOnHover: true,
+    verticalTrackClass: 'track',
+    verticalHandleClass: 'handle',
+	scrollIncrement:100,
+	addPaddingToPane:false
+});
+
+$(".btnEllipsis").click(function(e){
+	   e.stopPropagation(); 
+	 $(".popstatus").slideToggle();
+});
+
+$('.popstatus').click(function(e) { 
+   e.stopPropagation(); 
+});
+
+$(document).click(function() { 
+ $(".popstatus").slideUp(); 
+});
+});
+
+$(window).resize(function(){
+var MsgPgHeight = $(window).height() - $(".TopHeadSticky").outerHeight(true) - $(".botSpace").height() -$('.inputHeight').height()  + "px";
+$(".contentMainArea, .msgContainer").height(MsgPgHeight);
+
+var restHeight = $(".msgContainer").height() - $(".struTable").height() + "px";
+$(".bodyTablescroll").height(restHeight);
+});
+</script>
+
