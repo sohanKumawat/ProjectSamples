@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ai.msg.entity.User;
-import ai.msg.security.UserService;
+import ai.msg.common.entity.User;
+import ai.msg.modules.interfaces.UserService;
 import ai.msg.security.auth.jwt.extractor.TokenExtractor;
 import ai.msg.security.auth.jwt.verifier.TokenVerifier;
 import ai.msg.security.config.JwtSettings;

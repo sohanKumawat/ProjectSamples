@@ -1,13 +1,13 @@
-package ai.msg.user.service;
+package ai.msg.modules.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ai.msg.entity.User;
-import ai.msg.security.UserService;
-import ai.msg.user.repository.UserRepository;
+import ai.msg.common.entity.User;
+import ai.msg.modules.interfaces.UserService;
+import ai.msg.repositories.UserRepository;
 
 /**
  * Mock implementation.

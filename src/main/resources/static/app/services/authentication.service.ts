@@ -9,8 +9,8 @@ export class AuthenticationService {
 
     login(username: string, password: string) {///api/authenticate
      var  headers = new Headers();
-     headers.append('Content-Type': 'application/json');
-     headers.append('X-Requested-With':'XMLHttpRequest')
+     headers.append('Content-Type', 'application/json');
+     headers.append('X-Requested-With','XMLHttpRequest')
         return this.http.post('/api/auth/login', JSON.stringify({ username: username, password: password }),{headers:headers})
             .map((response: Response) => {
                 let user = response.json();

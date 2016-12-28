@@ -47,7 +47,8 @@
         },
         transpiler: 'typescript',
         typescriptOptions: {
-          emitDecoratorMetadata: true
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true
         },
         meta: {
             typescript: {

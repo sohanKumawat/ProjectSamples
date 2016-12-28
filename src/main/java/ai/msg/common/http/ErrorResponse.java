@@ -1,4 +1,4 @@
-package ai.msg.common;
+package ai.msg.common.http;
 
 import java.util.Date;
 

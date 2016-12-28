@@ -1,4 +1,4 @@
-package ai.msg.common;
+package ai.msg.config;
 
 import org.h2.server.web.WebServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;

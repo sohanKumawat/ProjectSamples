@@ -1,4 +1,4 @@
-package ai.msg.entity;
+package ai.msg.common.entity;
 
 import java.io.Serializable;
 

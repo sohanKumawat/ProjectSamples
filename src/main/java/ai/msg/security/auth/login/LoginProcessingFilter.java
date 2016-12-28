@@ -22,8 +22,8 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ai.msg.common.WebUtil;
 import ai.msg.security.exceptions.AuthMethodNotSupportedException;
+import ai.msg.utils.WebUtil;
 
 /**
  * LoginProcessingFilter

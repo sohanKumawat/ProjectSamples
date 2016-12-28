@@ -1,8 +1,8 @@
-package ai.msg.security;
+package ai.msg.modules.interfaces;
 
 import java.util.Optional;
 
-import ai.msg.entity.User;
+import ai.msg.common.entity.User;
 
 /**
  * 

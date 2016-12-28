@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ai.msg.common.ErrorCode;
-import ai.msg.common.ErrorResponse;
+import ai.msg.common.http.ErrorCode;
+import ai.msg.common.http.ErrorResponse;
 import ai.msg.security.exceptions.AuthMethodNotSupportedException;
 import ai.msg.security.exceptions.JwtExpiredTokenException;
 

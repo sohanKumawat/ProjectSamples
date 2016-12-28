@@ -1,5 +1,5 @@
-﻿{
-    "compilerOptions": {
+{ 
+  "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
@@ -13,7 +13,6 @@
             "./node_modules/@types/"
         ]
     },
-    //"compileOnSave": true,
     "exclude": [
         "node_modules/*"
     ]

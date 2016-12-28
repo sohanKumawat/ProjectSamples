@@ -17,9 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import ai.msg.entity.User;
+import ai.msg.common.entity.User;
+import ai.msg.modules.service.DatabaseUserService;
 import ai.msg.security.model.UserContext;
-import ai.msg.user.service.DatabaseUserService;
 
 /**
  * 

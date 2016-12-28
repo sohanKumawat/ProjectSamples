@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { User } from '../_models/index';
+import { User } from '../models/index';
 
 @Injectable()
 export class AnalyticsService {
     constructor(private http: Http) { 
      }
     getAllAnalyticsData() {
-        return this.http.get('/api/analytics/dashboard', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('/api/v1/analytics/dashboard', this.jwt()).map((response: Response) => response.json());
     }
     getAnalyticsDataById(id: number) {
         return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());

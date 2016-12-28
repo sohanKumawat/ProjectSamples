@@ -1,4 +1,4 @@
-package ai.msg.common;
+package ai.msg.utils;
 
 import javax.servlet.http.HttpServletRequest;
 

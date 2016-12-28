@@ -1,4 +1,4 @@
-package ai.msg.security.config;
+package ai.msg.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

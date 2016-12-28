@@ -1,4 +1,4 @@
-package ai.msg.common;
+package ai.msg.common.http;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
