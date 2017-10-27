@@ -1,4 +1,4 @@
-package com.demo.slk.test;
+package com.demo.slk.java7;
 
 public class MyAutoClosable implements AutoCloseable {
 

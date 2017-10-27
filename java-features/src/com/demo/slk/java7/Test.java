@@ -1,4 +1,4 @@
-package com.demo.slk.test;
+package com.demo.slk.java7;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

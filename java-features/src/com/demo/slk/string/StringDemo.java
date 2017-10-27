@@ -1,15 +1,7 @@
 package com.demo.slk.string;
 
 public class StringDemo {
-	
-	
-	public static void k(String s){
-		
-	}
-    public static void k(String s){
-		
-	}
-	
+
 public static void main(String str[]){
 	
 	String s1=new String("sohan");//hepp
