@@ -35,7 +35,24 @@ public class Test {
 	    }
 	}
 	public static void main(String[] str){
-		Test.add();
+//		String sql = "(" 
+//				+" SELECT `tenantId`, ifnull(`childTenantId`, '-1') AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
+//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
+//				+" GROUP BY `tenantId`, `childTenantId`" 
+//			+" )"
+//			+" UNION ("
+//				+" SELECT `tenantId`, '-1' AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
+//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
+//				+" GROUP BY `tenantId`"
+//			+" )";
+		
+		String sql = "SELECT `date`,`isExpired`"
+				+" FROM msgai_analytics.reportCache"
+				+" WHERE tenantId = "+26
+				+" AND childTenantId = "+(-1)
+				+" AND kpiId = "+kpiId+";";
+		System.out.println("***sql *** "+sql);
+		//Test.add();
 	}
 
 }
