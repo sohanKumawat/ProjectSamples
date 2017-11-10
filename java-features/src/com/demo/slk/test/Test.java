@@ -1,41 +1,39 @@
 package com.demo.slk.test;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
-	
-	public static void add() throws RuntimeException{
-		try{
-			int a=5/8;
-		}catch(ArithmeticException | NullPointerException ex){
-			throw new RuntimeException();
-		}
-	}
-	private static void printFileJava7() throws IOException {
-	    try(FileInputStream input = new FileInputStream("file.txt")) {
-	        int data = input.read();
-	        while(data != -1){
-	            System.out.print((char) data);
-	            data = input.read();
-	        }
-	    }
-	}
-	private static void secondPrintFileJava7() throws IOException {
 
-	    try(  FileInputStream     input         = new FileInputStream("file.txt");
-	          BufferedInputStream bufferedInput = new BufferedInputStream(input)
-	    ) {
-	        int data = bufferedInput.read();
-	        while(data != -1){
-	            System.out.print((char) data);
-	    data = bufferedInput.read();
-	        }
-	    }
+	public void add(){
+		String str="Ok, let''s get started on some gift ideas.";
+		
+		str=str.replaceAll("''", "'");
+		System.out.println("str"+str);
 	}
-	public static void main(String[] str){
-		Test.add();
+	public static void main(String[] args) {
+		
+		LocalDateTime currentTimeInLosAngeles = LocalDateTime.now(ZoneId.of("America/Los_Angeles"));
+		// current time in UTC time zone
+		LocalDateTime nowInUtc = LocalDateTime.now();
+		System.out.println(currentTimeInLosAngeles.toString()+"  "+nowInUtc.toString());
+		
+List<Employe> emLst=new ArrayList();
+emLst.add(new Employe("sohan"));
+emLst.add(new Employe("sohan1"));
+emLst.add(new Employe("sohan2"));
+emLst.add(new Employe("sohan3"));
+Employe em=emLst.get(0);
+em.setName("mohan");
+emLst.get(1).setName("sdfcsfgx");
+		System.out.println(emLst);
+
+		new Test().add();
 	}
+	
+	
+	
 
 }
