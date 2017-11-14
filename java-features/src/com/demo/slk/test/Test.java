@@ -2,8 +2,10 @@ package com.demo.slk.test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -65,12 +67,15 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	public static void main(String[] args) {
 		
+	String val=	LocalDate.parse("2017-11-09")
+		.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		LocalDateTime currentTimeInLosAngeles = LocalDateTime.now(ZoneId.of("America/Los_Angeles"));
+		System.out.println("** val ** "+val);
 		// current time in UTC time zone
-		LocalDateTime nowInUtc = LocalDateTime.now();
+		/*LocalDateTime nowInUtc = LocalDateTime.now();
 		System.out.println(currentTimeInLosAngeles.toString()+"  "+nowInUtc.toString());
 		new Test().getIntentByDateRange();
-		new Test().getCountByDateRange();
+		new Test().getCountByDateRange();*/
 	}
 	
 	public Map<String, Integer> getIntentByDateRange(){
