@@ -3,6 +3,9 @@ package com.demo.slk.java7;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Test {
 	
@@ -35,24 +38,12 @@ public class Test {
 	    }
 	}
 	public static void main(String[] str){
-//		String sql = "(" 
-//				+" SELECT `tenantId`, ifnull(`childTenantId`, '-1') AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
-//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
-//				+" GROUP BY `tenantId`, `childTenantId`" 
-//			+" )"
-//			+" UNION ("
-//				+" SELECT `tenantId`, '-1' AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
-//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
-//				+" GROUP BY `tenantId`"
-//			+" )";
+		Test.add();
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 String endDate = format1.format(new Date("2017-11-08"));
+		String startDate = format1.format(new Date("2017-11-11"));
+		System.out.println(endDate+" -- "+startDate);
 		
-		String sql = "SELECT `date`,`isExpired`"
-				+" FROM msgai_analytics.reportCache"
-				+" WHERE tenantId = "+26
-				+" AND childTenantId = "+(-1)
-				+" AND kpiId = "+kpiId+";";
-		System.out.println("***sql *** "+sql);
-		//Test.add();
 	}
 
 }
