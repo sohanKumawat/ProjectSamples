@@ -15,10 +15,33 @@ import java.util.stream.Stream;
 
 public class Test {
 	static Map<String,HashMap<String ,Integer>> intMap=null;
+	static Map<String,Integer> testMap1=null;
+	static Map<String,Integer> testMap2=null;
+	static Map<String,HashMap<String ,Integer>> testMap3=null;
 	static Map<String ,Integer> countMap=null;
 
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	static{
+		
+		testMap1=new HashMap<String,Integer>(){{
+	put("x1",432412);
+	put("x2",21);
+	}};
+		testMap2=new HashMap<String,Integer>(){{
+			put("x1",32);
+			put("x2",32);
+			}};
+		
+			testMap3=new HashMap<>();
+			testMap3.put("x",new HashMap<String,Integer>(){{
+		put("xx",323);
+		put("x1",21);
+		}});
+			testMap3.put("y",new HashMap<String,Integer>(){{
+		put("xx",211);
+		put("x1",12);
+		}});
+			
 		intMap=new HashMap<>();
 		intMap.put("2017-11-12",new HashMap<String,Integer>(){{
 	put("telco.order.backorder.instruction",432412);
@@ -76,6 +99,8 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(currentTimeInLosAngeles.toString()+"  "+nowInUtc.toString());
 		new Test().getIntentByDateRange();
 		new Test().getCountByDateRange();*/
+		
+		new Test().getfinalMapByCount();
 	}
 	
 	public Map<String, Integer> getIntentByDateRange(){
@@ -100,6 +125,28 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println("Intent result by date range ** "+result.toString());
 		return result;
 	}
+	
+	public Map<String, Integer> getfinalMapByCount(){
+		
+		/*Map<Object, Integer> totalVisitCounts1 = testMap3.entrySet().stream()
+				.map(rmap->rmap.getValue()).collect(Collectors.toMap(
+			        entry -> entry.getKey(), // The key
+			        entry -> entry.getValue(), // The value
+			        // The "merger" as a method reference
+			        Integer::sum
+			    ));*/
+		   
+		Map<String, Integer> totalVisitCounts = Stream.concat(testMap1.entrySet().stream(), testMap2.entrySet().stream())
+			    .collect(Collectors.toMap(
+			        entry -> entry.getKey(), // The key
+			        entry -> entry.getValue(), // The value
+			        // The "merger" as a method reference
+			        Integer::sum
+			    ));
+		System.out.println("Intent result by date range ** "+totalVisitCounts.toString());
+		return totalVisitCounts;
+	}
+	
 	public HashMap<String,Integer> getCountByDateRange(){
 		HashMap<String,Integer> dValueCount = (HashMap<String, Integer>) countMap.entrySet().stream()
 				.filter(p ->{
