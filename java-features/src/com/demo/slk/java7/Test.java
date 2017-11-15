@@ -13,6 +13,7 @@ public class Test {
 			throw new RuntimeException();
 		}
 	}
+	@SuppressWarnings("unused")
 	private static void printFileJava7() throws IOException {
 	    try(FileInputStream input = new FileInputStream("file.txt")) {
 	        int data = input.read();
@@ -22,6 +23,7 @@ public class Test {
 	        }
 	    }
 	}
+	@SuppressWarnings("unused")
 	private static void secondPrintFileJava7() throws IOException {
 
 	    try(  FileInputStream     input         = new FileInputStream("file.txt");
@@ -35,22 +37,11 @@ public class Test {
 	    }
 	}
 	public static void main(String[] str){
-//		String sql = "(" 
-//				+" SELECT `tenantId`, ifnull(`childTenantId`, '-1') AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
-//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
-//				+" GROUP BY `tenantId`, `childTenantId`" 
-//			+" )"
-//			+" UNION ("
-//				+" SELECT `tenantId`, '-1' AS `childTenantId`, MIN(`messageTimestamp`) AS `timestamp`"
-//				+" FROM `msgai_analytics`.`conversationLog` `cl`"
-//				+" GROUP BY `tenantId`"
-//			+" )";
-		
 		String sql = "SELECT `date`,`isExpired`"
 				+" FROM msgai_analytics.reportCache"
 				+" WHERE tenantId = "+26
 				+" AND childTenantId = "+(-1)
-				+" AND kpiId = "+kpiId+";";
+				+" AND kpiId = "+12+";";
 		System.out.println("***sql *** "+sql);
 		//Test.add();
 	}
