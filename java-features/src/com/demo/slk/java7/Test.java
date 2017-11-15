@@ -3,6 +3,8 @@ package com.demo.slk.java7;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Test {
 	
@@ -43,7 +45,11 @@ public class Test {
 				+" AND childTenantId = "+(-1)
 				+" AND kpiId = "+12+";";
 		System.out.println("***sql *** "+sql);
-		//Test.add();
+		Test.add();
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 String endDate = format1.format(new Date("2017-11-08"));
+		String startDate = format1.format(new Date("2017-11-11"));
+		System.out.println(endDate+" -- "+startDate);
 	}
 
 }
