@@ -4,7 +4,6 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Test {
@@ -16,6 +15,7 @@ public class Test {
 			throw new RuntimeException();
 		}
 	}
+	@SuppressWarnings("unused")
 	private static void printFileJava7() throws IOException {
 	    try(FileInputStream input = new FileInputStream("file.txt")) {
 	        int data = input.read();
@@ -25,6 +25,7 @@ public class Test {
 	        }
 	    }
 	}
+	@SuppressWarnings("unused")
 	private static void secondPrintFileJava7() throws IOException {
 
 	    try(  FileInputStream     input         = new FileInputStream("file.txt");
@@ -38,12 +39,17 @@ public class Test {
 	    }
 	}
 	public static void main(String[] str){
+		String sql = "SELECT `date`,`isExpired`"
+				+" FROM msgai_analytics.reportCache"
+				+" WHERE tenantId = "+26
+				+" AND childTenantId = "+(-1)
+				+" AND kpiId = "+12+";";
+		System.out.println("***sql *** "+sql);
 		Test.add();
 		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 String endDate = format1.format(new Date("2017-11-08"));
 		String startDate = format1.format(new Date("2017-11-11"));
 		System.out.println(endDate+" -- "+startDate);
-		
 	}
 
 }
