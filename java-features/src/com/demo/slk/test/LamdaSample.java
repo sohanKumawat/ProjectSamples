@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 public class LamdaSample {
 
+	@SuppressWarnings("serial")
 	public void add() {
 		String str = "Ok, let''s get started on some gift ideas.";
 
@@ -35,7 +36,7 @@ public class LamdaSample {
 				put("telco.order.cancellation", 32);
 			}
 		});
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		//Date date1 = sdf.parse("2017-11-10");
 		/*map.entrySet().stream().filter(val -> {
 			Date mDate = sdf.parse(val.toString());
@@ -75,8 +76,6 @@ public class LamdaSample {
 //emLst.get(1).setName("sdfcsfgx");
 //		System.out.println(emLst);
 
-		new Test().TestMethod();
-		
 		 Map<Integer, String> HOSTING = new HashMap<>();
 	        HOSTING.put(1, "linode.com");
 	        HOSTING.put(2, "heroku.com");
@@ -105,6 +104,7 @@ public class LamdaSample {
  
 
 	}
+	@SuppressWarnings({ "serial", "unused", "rawtypes" })
 	public void TestMethod(){
 try{
 Map<String,HashMap<String ,Integer>> map=new HashMap<>();
@@ -125,7 +125,8 @@ Date minDate = sdf.parse("2017-11-10");
 Date maxDate = sdf.parse("2017-11-13");
 		
 Function fction=new Function<Map<String,HashMap<String ,Integer>>, HashMap<String ,Integer>>() {
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public HashMap<String ,Integer> apply(Map<String,HashMap<String ,Integer>> person) {
        return (HashMap<String, Integer>) person.values();
     }
@@ -151,7 +152,6 @@ Function fction=new Function<Map<String,HashMap<String ,Integer>>, HashMap<Strin
 					return false;
 				}).collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
 		
-		@SuppressWarnings("unchecked")
 		Stream<Map<String,Integer>> finalstudents =  map.entrySet().stream()
 				.filter(p -> {
 					try {

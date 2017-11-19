@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@SuppressWarnings("serial")
 public class Test {
 	static Map<String,HashMap<String ,Integer>> intMap=null;
 	static Map<String,Integer> testMap1=null;
@@ -88,6 +89,7 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	}
 	public void add() {}
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 	String val=	LocalDate.parse("2017-11-09")
@@ -161,7 +163,6 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return dValueCount;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<Integer> getIntentByDate(Map<String,Integer> mapValues){
 			List<Integer> value  =  mapValues.entrySet().stream()
 					.map(rmap->rmap.getValue()).collect(Collectors.toList());
