@@ -1,5 +1,5 @@
 package com.app.demo.services.gateway;
-
+//http://blog.michalszalkowski.com/java/spring-boot-basic-authentication-in-memory-authentication/
 import javax.sql.DataSource;
 
 import org.springframework.boot.SpringApplication;

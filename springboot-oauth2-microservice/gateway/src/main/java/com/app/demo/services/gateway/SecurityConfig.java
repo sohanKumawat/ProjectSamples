@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+//https://stackoverflow.com/questions/42613899/inmemoryauthentication-with-spring-boot
 @Configuration
 @EnableWebSecurity
 @Order(-10)
@@ -21,13 +21,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-		.authorizeRequests()
-			.anyRequest().authenticated()
-			.and()
 		.formLogin()
-			.loginPage("/login")
-			.permitAll()
-			.and().httpBasic().disable();
+        .loginPage("login")
+        .permitAll()
+        .loginProcessingUrl("/login")
+        .failureUrl("/login.html?error=true")
+        .defaultSuccessUrl("/user/index")
+        .and()
+    .exceptionHandling()
+        .accessDeniedPage("/denied")
+        .and()
+    .authorizeRequests()
+      //  .antMatchers("/mockup/**").permitAll()
+        //.antMatchers("/books/**").permitAll()
+        .antMatchers("/v1/api/service/**").authenticated()
+        .and()
+    .logout()
+        .permitAll()
+        .logoutSuccessUrl("/login.html");
 	}
 
 	@Override
