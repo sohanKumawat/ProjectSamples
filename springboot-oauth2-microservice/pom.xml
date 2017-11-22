@@ -16,6 +16,13 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+	<modules>
+		<module>auth</module>
+		<module>account</module>
+		<module>customer</module>		
+		<module>discovery</module>
+		<module>gateway</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -29,12 +36,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<modules>
-		<module>auth</module>
-		<module>account</module>
-		<module>customer</module>		
-		<module>discovery</module>
-		<module>gateway</module>
-	</modules>
+	
 
 </project>
