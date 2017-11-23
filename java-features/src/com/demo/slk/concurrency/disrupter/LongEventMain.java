@@ -1,4 +1,12 @@
 package com.demo.slk.concurrency.disrupter;
+
+import java.nio.ByteBuffer;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.dsl.Disruptor;
+
 public class LongEventMain
 {
     public static void main(String[] args) throws Exception

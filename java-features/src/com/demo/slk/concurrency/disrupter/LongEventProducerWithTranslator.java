@@ -1,5 +1,10 @@
 package com.demo.slk.concurrency.disrupter;
 
+import java.nio.ByteBuffer;
+
+import com.lmax.disruptor.EventTranslatorOneArg;
+import com.lmax.disruptor.RingBuffer;
+
 public class LongEventProducerWithTranslator
 {
     private final RingBuffer<LongEvent> ringBuffer;

@@ -1,5 +1,12 @@
 package com.demo.slk.concurrency.disrupter;
 
+import java.nio.ByteBuffer;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.dsl.Disruptor;
+
 public class LongEventMain2 {
     public static void handleEvent(LongEvent event, long sequence, boolean endOfBatch)
     {
@@ -25,7 +32,7 @@ public class LongEventMain2 {
                 factory, bufferSize, ProducerType.SINGLE, new BlockingWaitStrategy(), executor);
         */    
         // Connect the handler
-        disruptor.handleEventsWith(LongEventMain::handleEvent);
+        //disruptor.handleEventsWith(LongEventMain::handleEvent);
 
         // Start the Disruptor, starts all threads running
         disruptor.start();
@@ -37,7 +44,7 @@ public class LongEventMain2 {
         for (long l = 0; true; l++)
         {
             bb.putLong(0, l);
-            ringBuffer.publishEvent(LongEventMain::translate, bb);
+          //  ringBuffer.publishEvent(LongEventMain::translate, bb);
             Thread.sleep(1000);
         }
     }
