@@ -5,7 +5,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class ProducerConsumerPattern {
 
-    public static void main(String args[]){
+    @SuppressWarnings("rawtypes")
+	public static void main(String args[]){
   
      //Creating shared object
      BlockingQueue sharedQueue = new LinkedBlockingQueue();
