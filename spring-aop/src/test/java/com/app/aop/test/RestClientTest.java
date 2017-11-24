@@ -1,4 +1,6 @@
 package com.app.aop.test;
+
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -16,7 +18,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.app.aop.model.Account;
 import com.app.aop.service.AccountService;
 import com.app.aop.web.AccountController;
-import com.fasterxml.jackson.databind.ObjectMapper;
 //https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/maven-plugin/usage.html
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringBootTest
@@ -31,11 +32,10 @@ public class RestClientTest {
 	private MockMvc mockMvc;
 	@MockBean
 	private AccountService accountService;
-	private ObjectMapper mapper=new ObjectMapper();
 	@Test
 	public void testCustomerAccount(){
 		//List<Account> result = Arrays.asList(new Account("000001", "Account 1"));
-		Account result = new Account("000001", "Account 1");
+		Account result = new Account("1", "a");
 	try{
 		//String outputJson=mapper.writeValueAsString(result);
 		Mockito.when(

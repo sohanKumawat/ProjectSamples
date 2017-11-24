@@ -67,9 +67,11 @@ public class StudentService {
 		return student.getCourses();
 	}
 
-	public Course retrieveCourse(String studentId, String courseId) {
-		Student student = retrieveStudent(studentId);
-
+	public Course retrieveCourse() {
+		return new Course("Course1", "Spring", "10 Steps", Arrays
+				.asList("Learn Maven", "Import Project", "First Example",
+						"Second Example"));//retrieveStudent(studentId);
+/*
 		if (student == null) {
 			return null;
 		}
@@ -78,9 +80,9 @@ public class StudentService {
 			if (course.getId().equals(courseId)) {
 				return course;
 			}
-		}
+		}*/
 
-		return null;
+		//return null;
 	}
 
 	private SecureRandom random = new SecureRandom();
