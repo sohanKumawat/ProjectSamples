@@ -10,7 +10,7 @@ import com.app.aop.aspect.Auditable.AuditDestination;
 import com.app.aop.model.Account;
 
 @Service
-public class ExampleService {
+public class AccountService {
 
 	@Auditable(AuditDestination.DATABASE)
 	public void updateAccountBalance(Account account, Long amount) {
@@ -23,6 +23,10 @@ public class ExampleService {
 		List<Account> result = new ArrayList<>();
 		result.add(new Account("000001", "Account 1"));
 		return result;
+	}
+	public Account customerAccount(Long customerId) {
+		System.out.println("Finding accounts for customer: " + customerId);
+		return new Account("1", "a");
 	}
 
 	public Account updateAccountDescription(Account account) {

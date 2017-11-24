@@ -52,7 +52,7 @@ public class AccountLoggingAspect {
 	}
 
 	@Around(value = "com.app.aop.aspect.PointcutDefinition.serviceLayer() && "
-			+ "execution(* com.app.aop.service.ExampleService.updateAccountDescription(..)) && " + "args(account)")
+			+ "execution(* com.app.aop.service.AccountService.updateAccountDescription(..)) && " + "args(account)")
 	public Account beforeUpdateAccountDescription(ProceedingJoinPoint pjp, Account account) throws Throwable {
 		System.out.println("Account description" + account.getAccountDescription().toUpperCase());
 		account.setAccountDescription(account.getAccountDescription().toUpperCase() + "new description");
@@ -66,7 +66,7 @@ public class AccountLoggingAspect {
 	}
 
 	@Before(value = "com.app.aop.aspect.PointcutDefinition.serviceLayer() && "
-			+ "execution(* com.app.aop.service.ExampleService.methodUsingGenerics(..)) && " + "args(parameter)")
+			+ "execution(* com.app.aop.service.AccountService.methodUsingGenerics(..)) && " + "args(parameter)")
 	public void beforeGenericMethod(Account parameter) {
 		System.out.println("Logging access to generic method. Account: " + parameter.getAccountNumber());
 	}
