@@ -30,7 +30,7 @@ public class StudentController {
 	public Course retrieveDetailsForCourse() {
 		return studentService.retrieveCourse();
 	}
-	
+	/*
 	@PostMapping("/students/{studentId}/courses")
 	public ResponseEntity<Void> registerStudentForCourse(
 			@PathVariable String studentId, @RequestBody Course newCourse) {
@@ -45,5 +45,5 @@ public class StudentController {
 
 		return ResponseEntity.created(location).build();
 	}
-
+*/
 }

@@ -1,5 +1,7 @@
 package com.app.demo.test.client;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -9,8 +11,11 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -22,10 +27,12 @@ import com.app.demo.model.Account;
 import com.app.demo.model.Course;
 import com.app.demo.service.AccountService;
 import com.app.demo.service.StudentService;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebMvcTest(value ={ StudentController.class,AccountController.class}, secure = false)
-public class StudentControllerTest {
+//https://spring.io/guides/gs/testing-web/
+//https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
+//http://www.baeldung.com/spring-boot-testing
+@RunWith(SpringRunner.class)
+@WebMvcTest(value ={ AccountController.class,StudentController.class})
+public class AccountControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -38,6 +45,7 @@ public class StudentControllerTest {
 	Course mockCourse = new Course("Course1", "Spring", "10 Steps",
 			Arrays.asList("Learn Maven", "Import Project", "First Example",
 					"Second Example"));
+	Account mockAccount = new Account("1", "a");
 
 	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
@@ -60,23 +68,20 @@ public class StudentControllerTest {
 		JSONAssert.assertEquals(expected, result.getResponse()
 				.getContentAsString(), false);
 	}
-	//@Test
-	public void testCustomerAccount(){
-		//List<Account> result = Arrays.asList(new Account("000001", "Account 1"));
-		Account mockAccount = new Account("1", "a");
+	@Test
+	public void accountDetails(){
 	try{
-		//String outputJson=mapper.writeValueAsString(result);
 		Mockito.when(accountService.customerAccount()).thenReturn(mockAccount);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-				"v1/api/account").accept(
+				"/v1/api/account/").accept(
 				MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		String expected = "{accountNumber:1,accountDescription:a}";
 
-		System.out.println("Response Json data "+result.getResponse().getContentType()+"  "+result.getResponse().getContentLength());
+		System.out.println("Account Response Json data "+result.getResponse().getContentType()+"  "+result.getResponse().getContentLength());
 		
 		JSONAssert.assertEquals(expected, result.getResponse()
 				.getContentAsString(), false);
@@ -84,8 +89,8 @@ public class StudentControllerTest {
 		ex.printStackTrace();
 	}
 	}
-//	@Test
-	public void createStudentCourse() throws Exception {/*
+	@Test
+	public void createStudentCourse() throws Exception {
 		Course mockCourse = new Course("1", "Smallest Number", "1",
 				Arrays.asList("1", "2", "3", "4"));
 
@@ -109,6 +114,6 @@ public class StudentControllerTest {
 		assertEquals("http://localhost/students/Student1/courses/1",
 				response.getHeader(HttpHeaders.LOCATION));
 
-	*/}
+	}
 
 }
