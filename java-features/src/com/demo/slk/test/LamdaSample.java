@@ -60,7 +60,16 @@ public class LamdaSample {
 	}
 
 	public static void main(String[] args) {
+		Map<String,Integer> tmap=new HashMap<>();
+		tmap.merge("sohan", 1, (oldValue, value) -> oldValue + value); 
+		tmap.merge("sohan", 1, (oldValue, value) -> oldValue + value); 
+		tmap.merge("sohan", 1, (oldValue, value) -> oldValue + value); 
+		System.out.println(tmap.get("sohan"));
 		
+		Function<Integer,Integer> add1 = x -> x + 1;
+int count =10;
+        Integer two = add1.apply(count);
+        System.out.println("** count ** "+count +" two "+two);
 		LocalDateTime currentTimeInLosAngeles = LocalDateTime.now(ZoneId.of("America/Los_Angeles"));
 		// current time in UTC time zone
 		LocalDateTime nowInUtc = LocalDateTime.now();

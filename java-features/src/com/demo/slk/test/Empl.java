@@ -2,7 +2,7 @@ package com.demo.slk.test;
 
 import java.util.List;
 
-public class Empl {
+public final class Empl {
 	
 private final int id;
 private final String name;

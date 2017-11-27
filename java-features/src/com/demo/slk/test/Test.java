@@ -6,8 +6,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -101,8 +103,15 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(currentTimeInLosAngeles.toString()+"  "+nowInUtc.toString());
 		new Test().getIntentByDateRange();
 		new Test().getCountByDateRange();*/
+		List<String> lst=new ArrayList<String>();
+		List<String> linkLst=new LinkedList<String>(){{add("sohan");add("mohan");}};
+		System.out.println(linkLst.get(0));
 		
-		new Test().getfinalMapByCount();
+		Student st=new Student(){{setName("sohan");}};
+		//private LinkedList<Integer> adj[] =new LinkedList<Integer>[10];
+		System.out.println("Student name "+st.getName());
+		
+		//new Test().getfinalMapByCount();
 	}
 	
 	public Map<String, Integer> getIntentByDateRange(){
