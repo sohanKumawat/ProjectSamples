@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.app</groupId>
-	<artifactId>springaop</artifactId>
+	<artifactId>SpringJunit</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>Spring aop</name>
-	<description>Social Seminar Application</description>
+	<name>Spring Junit Demo</name>
+	<description>Spring Junit Demo Application</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

@@ -1,0 +1,2 @@
+propertyresource ->@PropertySource({ "classpath:application-${envTarget:local}.properties" })
+at the time of maven build -DenvTarget=dev,local,prod
