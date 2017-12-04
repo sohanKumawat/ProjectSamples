@@ -15,5 +15,4 @@ public int minimumDistance(int[] dist,boolean sptSet[]){
 	return min_index;
   }
 
-
 }
