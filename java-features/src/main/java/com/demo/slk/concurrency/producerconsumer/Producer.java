@@ -1,16 +1,14 @@
 package com.demo.slk.concurrency.producerconsumer;
 
 import java.util.concurrent.BlockingQueue;
-
+@SuppressWarnings({"rawtypes","unchecked"})
 class Producer implements Runnable {
-
-    private final BlockingQueue sharedQueue;
-
+	private final BlockingQueue sharedQueue;
     public Producer(BlockingQueue sharedQueue) {
         this.sharedQueue = sharedQueue;
     }
 
-    @Override
+	@Override
     public void run() {
         for(int i=0; i<10; i++){
             try {
