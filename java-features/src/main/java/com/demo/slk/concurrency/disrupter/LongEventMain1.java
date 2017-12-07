@@ -6,10 +6,10 @@ import java.util.concurrent.Executors;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
-
+@SuppressWarnings("unchecked")
 public class LongEventMain1 
 {
-    public static void main(String[] args) throws Exception
+	public static void main(String[] args) throws Exception
     {
         // Executor that will be used to construct new threads for consumers
         Executor executor = Executors.newCachedThreadPool();

@@ -9,7 +9,8 @@ import com.lmax.disruptor.dsl.Disruptor;
 
 public class LongEventMain
 {
-    public static void main(String[] args) throws Exception
+    @SuppressWarnings("unchecked")
+	public static void main(String[] args) throws Exception
     {
         // Executor that will be used to construct new threads for consumers
         Executor executor = Executors.newCachedThreadPool();

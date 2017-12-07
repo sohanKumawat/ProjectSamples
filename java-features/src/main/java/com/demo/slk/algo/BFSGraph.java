@@ -17,9 +17,11 @@ public class BFSGraph {
 			adg[i]=new LinkedList<Integer>();
 		}
 	}
+	@SuppressWarnings("unchecked")
 	public void addEdge(int v,int w){
 		adg[v].add(w);
 	}
+	@SuppressWarnings("unchecked")
 	public void BFSTraverse(int s){
 		visited[s]=true;
 		 LinkedList<Integer> queue = new LinkedList<Integer>();
@@ -48,15 +50,15 @@ public class BFSGraph {
 	     g.addEdge(0, 1);
 	     g.addEdge(0, 2);
 	     g.addEdge(1, 2);
-	     g.addEdge(2, 0);
+	     g.addEdge(2, 4);
 	     g.addEdge(2, 3);
 	     g.addEdge(3, 3);
 	     g.addEdge(3, 4);
 
 	     System.out.println("Following is Breadth First Traversal "+
-	                        "(starting from vertex 2)");
+	                        "(starting from vertex 0)");
 
-	     g.BFSTraverse(2);
+	     g.BFSTraverse(0);
 		
 	}
 	

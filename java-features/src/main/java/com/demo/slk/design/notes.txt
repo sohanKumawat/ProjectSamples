@@ -1,1 +1,4 @@
 https://www.dineshonjava.com/microservices-with-spring-boot/
+
+http://www.oodesign.com/
+http://www.oodesign.com/design-principles.html

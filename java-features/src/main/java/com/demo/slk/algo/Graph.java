@@ -10,8 +10,7 @@ public class Graph
  private int V;   // No. of vertices
  private LinkedList<Integer> adj[]; //Adjacency Lists
 
- // Constructor
- @SuppressWarnings({ "unchecked", "rawtypes" })
+@SuppressWarnings({ "unchecked", "rawtypes" })
 Graph(int v)
  {
      V = v;
@@ -53,7 +52,6 @@ Graph(int v)
      }
  }
 
- // Driver method to
  public static void main(String args[])
  {
      Graph g = new Graph(5);
@@ -72,4 +70,4 @@ Graph(int v)
      g.BFS(3);
  }
 }
-//This code is contributed by Aakash Hasija
+

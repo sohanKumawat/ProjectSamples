@@ -1,8 +1,8 @@
 package com.demo.slk.concurrency.disrupter;
-
+@SuppressWarnings("unused")
 public class LongEvent
 {
-    private long value;
+	private long value;
 
     public void set(long value)
     {

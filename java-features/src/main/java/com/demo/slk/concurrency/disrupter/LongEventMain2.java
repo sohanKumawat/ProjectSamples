@@ -18,7 +18,8 @@ public class LongEventMain2 {
         event.set(buffer.getLong(0));
     }
 
-    public static void main(String[] args) throws Exception
+    @SuppressWarnings("unused")
+	public static void main(String[] args) throws Exception
     {
         // Executor that will be used to construct new threads for consumers
         Executor executor = Executors.newCachedThreadPool();
