@@ -44,6 +44,13 @@ public void initInput(){
 	
 	
 	public static void main(String[] args) {
+		String tmp[]={"","",""};
+		try{
+			int c= 4/0;
+			
+		}catch(Exception ex){
+			System.out.println("sdbc");
+		}
 		HackerEarthTest t=new HackerEarthTest();
 		t.initInput();
 		t.operation();

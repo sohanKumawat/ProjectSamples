@@ -13,6 +13,7 @@ class Producer implements Runnable {
         for(int i=0; i<10; i++){
             try {
                 System.out.println("Produced: " + i);
+                Thread.sleep(100);
                 sharedQueue.put(i);
             } catch (InterruptedException ex) {
                // Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
