@@ -27,7 +27,6 @@ public class SharedTable {
 		   }  
 		 }  
 	public synchronized  void printTable4(int n){  
-		wait()
 		   for(int i=1;i<=10;i++){  
 		     System.out.println("printTable4");  
 		     try{  

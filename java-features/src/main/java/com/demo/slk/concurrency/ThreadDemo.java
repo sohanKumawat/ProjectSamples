@@ -4,6 +4,10 @@ public class ThreadDemo {
 
 	public static void main(String[] args) {
 		Counter ctr = new Counter();
+		Thread t= new Thread(() -> {
+			System.out.println("hello"); 
+		 });
+		t.start();
 		Thread t1=new Thread(new Thread1(ctr),"1st thread");
 		Thread t2=new Thread(new Thread2(ctr),"2st thread");
 		t1.start();
