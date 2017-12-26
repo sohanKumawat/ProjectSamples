@@ -4,10 +4,13 @@ import static spark.Spark.get;
 import static spark.Spark.options;
 import static spark.Spark.post;
 import static spark.Spark.put;
+
+import spark.Request;
+import spark.Response;
 public class SparkRestExample {
-	public static void main(String[] args) {/*
-		
-		post("/users", (request, response) -> {
+	public static void main(String[] args) {
+		/*
+		post("/users", (request,response) -> {
         });
 		get("/users", (request, response) -> {
         });
@@ -22,8 +25,8 @@ public class SparkRestExample {
         });
         options("/users/:id", (request, response) -> {
             //...
-        });
+        });*/
     
 	
-	*/}
+	}
 }
