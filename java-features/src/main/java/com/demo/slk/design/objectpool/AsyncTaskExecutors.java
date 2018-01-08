@@ -1,5 +1,11 @@
 package com.demo.slk.design.objectpool;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
@@ -25,5 +31,15 @@ public class AsyncTaskExecutors {
 	    taskScheduler.setThreadNamePrefix("schedule-task-executor");
 	    taskScheduler.setThreadGroupName("connection");
 	    return  taskScheduler;
+	}
+	public static void main(String[] str){
+		Queue<Integer> queueNumbers = new ArrayBlockingQueue<>(3);
+		Queue<Integer> priorityQueue = new LinkedBlockingQueue<>(3);
+		 
+		System.out.println(priorityQueue.offer(1));
+		System.out.println(priorityQueue.offer(2));
+		System.out.println(priorityQueue.offer(3));
+		System.out.println(priorityQueue.offer(4));
+		System.out.println("** queue size ** "+priorityQueue.size());
 	}
 }

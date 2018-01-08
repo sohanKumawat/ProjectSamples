@@ -1,2 +1,3 @@
 propertyresource ->@PropertySource({ "classpath:application-${envTarget:local}.properties" })
 at the time of maven build -DenvTarget=dev,local,prod
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux
