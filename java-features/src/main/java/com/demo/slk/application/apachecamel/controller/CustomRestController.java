@@ -22,9 +22,11 @@ public class CustomRestController {
 	@RequestMapping(value = "/hello")
 	public ResponseEntity<?> restApiEndPoint(final HttpServletRequest request, @RequestBody String requestBody) {
 		final Exchange requestExchange = ExchangeBuilder.anExchange(camelContext).withBody(requestBody).build();
-		final Exchange responseExchange = producer.send("route-end-point", requestExchange);
+		final Exchange responseExchange = producer.send("integration-route", requestExchange);
 		final String responseBody = responseExchange.getOut().getBody(String.class);
 		final int responseCode = responseExchange.getOut().getHeader(Exchange.HTTP_RESPONSE_CODE, Integer.class).intValue();
 		return ResponseEntity.status(responseCode).body(responseBody);
+		//producerTemplate.asyncCallbackSendBody(endpoint, body, onCompletion)
+		//producerTemplate.asyncRequestBodyAndHeaders(endpoint, body, headers)
 	}
 }

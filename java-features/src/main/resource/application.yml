@@ -33,4 +33,4 @@ endpoints:
 quickstart:
   generateOrderPeriod: 10s
   processOrderPeriod: 30s
-    
+   

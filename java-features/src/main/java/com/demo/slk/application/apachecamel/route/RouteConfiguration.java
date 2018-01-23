@@ -48,9 +48,11 @@ public class RouteConfiguration extends RouteBuilder {
 		
 		from("direct:b").tracing().choice()
 		        .when(header("foo").isEqualTo("bar")).process(processor).transform(transform)
-				.to("direct:b").when(header("foo").isEqualTo("cheese")).to("direct:b")
-				.otherwise().process(processor).transform(transform).to("direct:b")
+				.to("direct:d").when(header("foo").isEqualTo("cheese")).to("direct:b")
+				.otherwise().process(processor).transform(transform).to("direct:c")
 				.log("Camel body: ${body}");
+		
+		
 		rest("/say")
         .get("/hello").consumes("application/json").to("direct:b")
         .get("/bye").consumes("application/json").to("direct:bye")

@@ -9,6 +9,15 @@ employee salary greater then his manager ->
 2nd max salary employee ->
           select name, max(salary) from emp where salary< (select max(salary) from emp)
  
+ 
+ name, score, city
+ it     20  ,  del
+ it     30  ,  ban
+ it     40  ,  mub
+ 
+ name  maxScore max_score_city, min_score , min_score_city 
+ 
+ 
  get complete row info after using group clause ->
           select s1.* from score s1 inner join (select type ,max(point) as p from score group by type) 
           as s2 on s1.point =s2.p where s1.type=s2.type;

@@ -3,6 +3,9 @@ package com.demo.slk;
 public class propTiger {
 
 	public static void main(String[] str) {
+		Object[] names = new String[3];
+		names[0] = new Integer(0);
+
 		for (int i = 1;; i++) {
 			int a = i / 10000;
 			int b = (i / 1000) % 10;

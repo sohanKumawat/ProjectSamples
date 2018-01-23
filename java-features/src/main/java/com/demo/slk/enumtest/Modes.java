@@ -9,7 +9,8 @@ public enum Modes {
 	  MODE1("Mode1"),
 	  MODE2("Mode2"),
 	  MODE3("Mode3");
-
+	
+	
 	 private String value;
 	 public String getValue() {
 	    return value;
@@ -33,6 +34,8 @@ public enum Modes {
 			System.out.println("getValue "+Modes.MODE1.getValue().toString());
 			System.out.println("ordinal "+Modes.MODE1.ordinal());
 			System.out.println("getModeType "+Modes.getModeType("Mode1"));
+			Modes.MODE1.value="hello";
+			System.out.println("getModeType "+Modes.MODE1.value);
 			
 	 }
 	

@@ -8,4 +8,7 @@ public class A {
 	public Number addNumber(int a,int b){
 		return a+b;
 	}
+	public final void show(){
+		
+	}
 }

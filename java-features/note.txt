@@ -1,3 +1,100 @@
 propertyresource ->@PropertySource({ "classpath:application-${envTarget:local}.properties" })
 at the time of maven build -DenvTarget=dev,local,prod
 https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux
+
+
+[1, 2, 1, 2, 3]
+
+num OP num
+
+num1 XOR num2
+
+1 XOR 2 = c
+
+c XOR 2 = 1
+
+Map<Integer,Integer> cMap=new HasMap<>();
+for(int i=0;i<a.length;i++){
+if(cMap.containKey(i)){
+cMap.put(i,cMpa.get(i)+1);
+}
+else {
+cMap.put(i,1);
+}
+}
+int num=0;
+for(Map.Entry<Integer,Integer> map:cMap.Entryset()){
+if(map.getValue()==1) {
+num=map.getkey();
+break;
+}
+}
+Sop(num);
+
+
+
+
+
+
+
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
+public @interface Validate {
+
+    enum Type {
+        ALPHANUMERIC, ALPHA, NUMERIC, EMAIL, PHONE
+    }
+
+    Type type() default Type.ALPHANUMERIC;
+    String name();
+}
+
+
+class ValidationManager {
+    
+    public manage(Object obj) throws Exception {
+     obj.annothe
+    }
+    
+    private boolean validateString(String value, Validate.Type type) {
+    	...
+      .. already provided ..
+      ...
+    }
+}
+
+
+
+class Car {
+	
+	@Validate(type = Validate.Type.ALPHA)
+	String name;
+  
+  @Validate(type = Validate.Type.NUMERIC)
+	String model;
+	
+	public void test() {
+		new ValidationManager().manage(this);
+	}
+
+}
+id, name, age, dept, city
+
+1 raj 23 dept1 delhi
+2 anmol 34 dept1 delhi
+3 rishabh 33 dept2 bangalore
+4 rohan 21 dept3 mumbai
+5 rohit 23 dept2 bangalore
+6 sanchit 34 dept1 mumbai
+
+
+find out minimum age per department, per city
+
+23 d1 del
+21 d3 m
+34 d1 m
+23 d2 ba
+
+select min(e1.age),e1.dept, e1.city form emp e1 group by city,dept order by age asc; 
+, dept;

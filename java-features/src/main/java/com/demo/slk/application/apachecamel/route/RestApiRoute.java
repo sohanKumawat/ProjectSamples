@@ -2,23 +2,24 @@ package com.demo.slk.application.apachecamel.route;
 
 import javax.ws.rs.core.MediaType;
 
-import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.component.jackson.JacksonDataFormat;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
+import com.demo.slk.application.User;
 import com.demo.slk.application.apachecamel.entity.Account;
 import com.demo.slk.application.apachecamel.service.AccountService;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 
 public class RestApiRoute extends RouteBuilder {
 	@Value("${server.port}")
 	String serverPort;
 
-	@Value("${baeldung.api.path}")
+	@Value("${api.path}")
 	String contextPath;
 	@Autowired
 	AccountService accountService;
@@ -46,6 +47,18 @@ public class RestApiRoute extends RouteBuilder {
 				// .outType(OutBean.class)
 
 				.to("direct:remoteService");
+
+		// shopify --> shop
+		// moje
+
+		JacksonDataFormat df = new JacksonDataFormat(User.class);
+		df.disableFeature(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+		df.disableFeature(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES);
+		df.setUnmarshalType(User.class);
+		df.setAllowUnmarshallType(true);
+		df.setPrettyPrint(true);
+		
+		
 		from("direct:remoteService").routeId("direct-route").tracing().log(">>> ${body.id}").log(">>> ${body.name}")
 				// .transform().simple("blue ${in.body.name}")
 				.process(new Processor() {

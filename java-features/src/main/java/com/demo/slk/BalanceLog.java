@@ -9,7 +9,7 @@ public class BalanceLog {
 		Map<Integer ,Integer> m=new HashMap<>();
 		int i=0;
 		m.put(i, 1);
-		 return 0.0;
+		  return 0.0;
 	}
 
 	// DO NOT MODIFY CODE BELOW THIS LINE

@@ -3,3 +3,5 @@ http://camel.apache.org/architecture.html
 http://camel.apache.org/spring-boot.html
 http://www.javarticles.com/2015/05/camel-filter-examples.html
 https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/fuse_integration_services_2.0_for_openshift/camel-spring-boot
+
+http://www.javarticles.com/2015/07/apache-camel-recipientlist-examples.html
