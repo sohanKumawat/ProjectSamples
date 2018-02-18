@@ -2,6 +2,7 @@ package com.demo.slk.application.apachecamel.route;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.demo.slk.application.apachecamel.filter.EntityFilter;
@@ -9,8 +10,11 @@ import com.demo.slk.application.apachecamel.logger.EntityLogger;
 import com.demo.slk.application.apachecamel.processor.EntityProcessor;
 import com.demo.slk.application.apachecamel.transformation.EntityTransformater;
 
+
 @Component
 public class FrontRouteConfiguratioin extends RouteBuilder {
+	@Autowired
+	private ApplicationContext context;
 	@Autowired
 	EntityFilter entityFilter;
 	@Autowired

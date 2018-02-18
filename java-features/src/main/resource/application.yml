@@ -1,36 +1,16 @@
-kafka:
-  bootstrap-servers: localhost:9092
-  topic:
-    helloworld: helloworld.t
-server:
-  session:
-    cookie:
-      max-age: 10
-    timeout: 10 
-  port: 8080
+spring:
+    profiles:
+        active: dev
+    resources.add-mappings: false  
+    mvc.throw-exception-if-no-handler-found: true  
+    datasource:
+        url: jdbc:mysql://localhost:3306/wynkmusic?useUnicode=true&characterEncoding=utf8
+        username: root
+        password:
 
-# for example purposes of Camel version 2.18 and below
-com:
-  api:
-    path: '/camel' 
-
-camel:
-  springboot:
-    # The Camel context name
-    name: ServicesRest
-
-# Binding health checks to a different port
-management:
-  port: 8081
-
-# disable all management enpoints except health
-endpoints:
-  enabled: false
-  health:
-    enabled: true
-
-# The application configuration properties
-quickstart:
-  generateOrderPeriod: 10s
-  processOrderPeriod: 30s
-   
+    jpa:
+        show_sql: true
+        hibernate:
+            ddl-auto: update
+        properties:
+                    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect 

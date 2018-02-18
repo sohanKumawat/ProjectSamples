@@ -2,8 +2,8 @@ package com.demo.slk.oops;
 
 public class Main {
 public static void main(String[] str){
-	A a=new B();
-	System.out.println(a.n+" -- "+a.add(1,3));
-	
+	A b=new B();
+	((B) b).test();
+	System.out.println(b.n+" -- "+b.add(1,3));
 }
 }

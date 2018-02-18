@@ -34,24 +34,5 @@ public class ShopifyOprationRoute extends RouteBuilder {
 		 .log("Camel body: ${body}");
 		
 	}
-	
-	@Bean("dsdz")
-	public OrderSta getOrderBean(){
-		return new OrderSta();
-	}
-	@Autowire
-	OrderSta oSBean;
-	
-	GetBean("sjzvdj").execute();
-	
-	OrderSta{
-		orderStat(){}
-		OderTraking(){}
-		OrderCa(){
-			
-		}
-	}
-	
-	
 
 }
