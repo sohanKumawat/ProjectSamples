@@ -13,6 +13,7 @@ import com.demo.slk.application.apachecamel.transformation.EntityTransformater;
 
 @Component
 public class FrontRouteConfiguratioin extends RouteBuilder {
+	@SuppressWarnings("unused")
 	@Autowired
 	private ApplicationContext context;
 	@Autowired

@@ -33,6 +33,7 @@ public class PIClientCacheService {
 		cacheMap=(Map<String, PIClient>)piClient.stream().collect(
                 Collectors.toMap(PIClient::getClientId, x->x));
 	}
+	@SuppressWarnings("unused")
 	public static void main(String str[]){
 		PIClientCacheService s=new PIClientCacheService();
 		s.setClientAsCache();

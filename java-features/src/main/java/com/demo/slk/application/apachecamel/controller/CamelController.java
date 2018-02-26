@@ -23,6 +23,7 @@ public class CamelController {
 		//producerTemplate
 		
 	}
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/sopify")
 	public void sopifyCall(HttpServletRequest request, @RequestBody String requestBody) {
 		System.out.println("** requestBody ** "+requestBody);

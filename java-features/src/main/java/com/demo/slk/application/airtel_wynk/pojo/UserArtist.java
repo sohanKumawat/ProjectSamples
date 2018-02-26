@@ -2,7 +2,6 @@ package com.demo.slk.application.airtel_wynk.pojo;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,9 +20,7 @@ public class UserArtist extends BasePojo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(name = "user_id")
 	private String userId;
-	@Column(name = "artist_id")
 	private String artistId;
 	
 }

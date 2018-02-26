@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class A {
 static B b;
+@SuppressWarnings("static-access")
 @Autowired
 public A(B b){
 	this.b=b;
