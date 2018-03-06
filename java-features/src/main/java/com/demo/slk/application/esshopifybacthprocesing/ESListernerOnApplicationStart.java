@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.demo.slk.application.esshopifybacthprocesing.batch.PlatformDataReader1;
 import com.demo.slk.application.esshopifybacthprocesing.es.entity.ClientInventoryHerarichy;
-import com.demo.slk.application.esshopifybacthprocesing.es.entity.PlProductInventory;
+import com.demo.slk.application.esshopifybacthprocesing.es.entity.PIProductInventory;
 import com.demo.slk.application.esshopifybacthprocesing.es.service.ClientInventoryHerarichyService;
 import com.demo.slk.application.esshopifybacthprocesing.es.service.ProductInventoryService;
 
@@ -56,13 +56,13 @@ public class ESListernerOnApplicationStart {
 
 		try {
 			platformDataReader1.read();
-			List<PlProductInventory> plProductInventory = pInventroyService.findByCategory("clothing",
+			List<PIProductInventory> plProductInventory = pInventroyService.findByCategory("clothing",
 					new PageRequest(0, 10));
 			List<ClientInventoryHerarichy> clientInventoryHerarichy = clientInventoryHerarichyService
 					.findByBotIdAndParentId("1232", "-1", new PageRequest(0, 10)).getContent();
 			for (ClientInventoryHerarichy piherarichy : clientInventoryHerarichy) {
 				try {
-					List<PlProductInventory> pipInventory = pInventroyService
+					List<PIProductInventory> pipInventory = pInventroyService
 							.findByCategoryAndSubCategory1(piherarichy.getName(), "Shirt", new PageRequest(0, 10))
 							.getContent();
 				} catch (Exception ex) {

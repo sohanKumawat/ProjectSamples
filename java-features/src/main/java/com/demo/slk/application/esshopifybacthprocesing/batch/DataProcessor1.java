@@ -1,25 +1,18 @@
 package com.demo.slk.application.esshopifybacthprocesing.batch;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.Collection;
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.ProductImage;
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.ProductVariant;
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.ShopifyProduct;
-import com.demo.slk.application.esshopifybacthprocesing.es.entity.ClientInventoryHerarichy;
-import com.demo.slk.application.esshopifybacthprocesing.es.entity.PlProductInventory;
+import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.pi.shopify.ShopifyProduct;
+import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.system.Collection;
 
 @Component
 public class DataProcessor1 {
 
 	@Autowired
 	PlatformDataWritter1 platformDataWriter;
-	public void process(ShopifyProduct item,Collection collection) {
-		List<PlProductInventory> piProductInventory = new ArrayList<>();
+	public void process(ShopifyProduct item,Collection collection) {/*
+		List<PIProductInventory> piProductInventory = new ArrayList<>();
 		ClientInventoryHerarichy inventoryHerarichy=new ClientInventoryHerarichy();
 		inventoryHerarichy.setBotId("1232");
 		inventoryHerarichy.setChildId(String.valueOf(item.getId()));
@@ -30,7 +23,7 @@ public class DataProcessor1 {
 		inventoryHerarichy.setType(item.getProducType());
 		inventoryHerarichy.setName(collection.getTitle());
 		
-		PlProductInventory inventoryProduct = new PlProductInventory();
+		PIProductInventory inventoryProduct = new PIProductInventory();
 		inventoryProduct.setBotId("1232");
 		inventoryProduct.setCategory(collection.getTitle());
 		inventoryProduct.setProductId(String.valueOf(item.getId()));
@@ -38,7 +31,7 @@ public class DataProcessor1 {
 		inventoryProduct.setUpdatedAt(item.getUpdatedAt());
 		inventoryProduct.setSubCategory1(item.getProducType());
 		if (item.getVariants() != null)
-			for (ProductVariant variant : item.getVariants()) {
+			for (ShopifyProductVariant variant : item.getVariants()) {
 				inventoryProduct.setAvailableQuantity(variant.getInventory_quantity());
 				inventoryProduct.setFilter1Value(variant.getOption1());
 				inventoryProduct.setFilter2Value(variant.getOption2());
@@ -48,9 +41,9 @@ public class DataProcessor1 {
 				if (null != item.getImages() && item.getImages().size() > 0
 						&& item.getImages().get(0).getSrc() != null) {
 					inventoryProduct.setImageUrl(item.getImages().get(0).getSrc());
-					for (ProductImage image : item.getImages()) {
+					for (ShopifyProductImage image : item.getImages()) {
 						for (Long vId : image.getVariantIds()) {
-							if (vId == variant.getId()) {
+							if (vId == Long.parseLong(variant.getId()!=null?variant.getId():"0")) {
 								inventoryProduct.setImageUrl(image.getSrc());
 								break;
 							}
@@ -69,5 +62,5 @@ public class DataProcessor1 {
 		}
 		platformDataWriter.productWrite(piProductInventory);
 		platformDataWriter.inventoryHerarichyWrite(inventoryHerarichy);
-	}
+	*/}
 }

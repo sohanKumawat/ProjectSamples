@@ -13,8 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.demo.slk.application.esshopifybacthprocesing.RestAPIExchange;
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.Collection;
-import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.ShopifyProduct;
+import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.pi.shopify.ShopifyProduct;
+import com.demo.slk.application.esshopifybacthprocesing.batch.pojo.system.Collection;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

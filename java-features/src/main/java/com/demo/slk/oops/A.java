@@ -12,6 +12,7 @@ public abstract class A {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void addval(){
 		
 	}

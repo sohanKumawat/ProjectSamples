@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Test {
 	
+	@SuppressWarnings("unused")
 	public static void add() throws RuntimeException{
 		try{
 			int a=5/8;
@@ -38,6 +39,7 @@ public class Test {
 	        }
 	    }
 	}
+	@SuppressWarnings("deprecation")
 	public static void main(String[] str){
 		String sql = "SELECT `date`,`isExpired`"
 				+" FROM msgai_analytics.reportCache"
