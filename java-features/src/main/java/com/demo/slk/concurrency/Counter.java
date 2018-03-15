@@ -23,7 +23,6 @@ public class Counter {
 			this.incr();
 			System.out.println(Thread.currentThread().getName() + "count value " + this.getValue());
 			try {
-				Thread.sleep(1000);
 				this.notify();
 				this.wait();
 			} catch (InterruptedException e) {
@@ -40,7 +39,6 @@ public class Counter {
 			this.incr();
 			System.out.println(Thread.currentThread().getName() + "count value " + this.getValue());
 			try {
-				Thread.sleep(1000);
 				this.notify();
 				this.wait();
 			} catch (InterruptedException e) {
