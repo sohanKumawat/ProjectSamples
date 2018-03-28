@@ -1,10 +1,15 @@
 package com.demo.slk;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BalanceLog {
 	public double balancePoint(Log log) {
-		 return 0.0;
+		Map<Integer ,Integer> m=new HashMap<>();
+		int i=0;
+		m.put(i, 1);
+		  return 0.0;
 	}
 
 	// DO NOT MODIFY CODE BELOW THIS LINE

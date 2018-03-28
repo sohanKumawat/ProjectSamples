@@ -11,6 +11,7 @@ import java.nio.file.WatchService;
 
 public class WathcherService {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String str[]){
 		
 		Path path=FileSystems.getDefault().getPath("/Users/ravi/Desktop/testFiles");

@@ -1,0 +1,6 @@
+Study link -> 
+1) https://spark.apache.org/examples.html
+2) https://www.edureka.co/blog/spark-tutorial/
+
+Spark with rest api -->
+1) http://www.baeldung.com/spark-framework-rest-api

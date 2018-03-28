@@ -9,7 +9,8 @@ public class MyAutoClosable implements AutoCloseable {
     public void close() throws Exception {
         System.out.println("MyAutoClosable closed!");
     }
-    private static void myAutoClosable()  {
+    @SuppressWarnings("unused")
+	private static void myAutoClosable()  {
         try(MyAutoClosable myAutoClosable = new MyAutoClosable()){
             myAutoClosable.doIt();
         }

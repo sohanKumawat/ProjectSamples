@@ -12,9 +12,11 @@ import com.demo.slk.java8.lamda.model.Developer;
 
 public class LamdaExpressionDemo {
 
+	
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes", "unused" })
 	public static void main(String[] args) {
 		List<Developer> result = new ArrayList<Developer>();
-		List<HashMap> mLst=new ArrayList<HashMap>();
+		List<HashMap<String,String>> mLst=new ArrayList<>();
         mLst.add(new HashMap<String,String>(){{
             put("id","1");
             put("name","sohan");

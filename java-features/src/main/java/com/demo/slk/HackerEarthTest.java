@@ -1,5 +1,14 @@
 package com.demo.slk;
-
+/*
+public class HackerEarthTest {
+	public static void main(String[] args) {
+      int val =Math.addExact(3, 23);
+      System.out.println("*** val **** "+val+Math.abs(-3)+" *** e2 *** "+Math.exp(2.0) +" inc "+Math.incrementExact(2));
+      
+      StringBuffer sb=new StringBuffer();
+      StringBuilder sbd=new StringBuilder();
+      
+	}*/
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -44,6 +53,13 @@ public void initInput(){
 	
 	
 	public static void main(String[] args) {
+		String tmp[]={"","",""};
+		try{
+			int c= 4/0;
+			
+		}catch(Exception ex){
+			System.out.println("sdbc");
+		}
 		HackerEarthTest t=new HackerEarthTest();
 		t.initInput();
 		t.operation();

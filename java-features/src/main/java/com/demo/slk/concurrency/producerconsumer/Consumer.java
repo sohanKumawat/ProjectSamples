@@ -14,9 +14,8 @@ class Consumer implements Runnable{
   
     @Override
     public void run() {
-        while(true){
+        while(sharedQueue.size()>0){
             try {
-            	
                 System.out.println("sharedQueue size "+sharedQueue.size()+"Consumed: "+ sharedQueue.take());
             } catch (InterruptedException ex) {
                // Logger.getLogger(Consumer.class.getName()).log(Level.SEVERE, null, ex);

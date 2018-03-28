@@ -28,9 +28,9 @@ public class AwesomeClass {
     	
     }
     
+    @SuppressWarnings("unused")
 	public static Integer invertTheNumber(){
         Integer toInvert = 5;
-        @SuppressWarnings("unused")
 		Function<String, String> dept = (s) -> s+"sohan";
         Function<Integer, Integer> invertFunction = AwesomeClass::invert;
         return compute(invertFunction, toInvert);

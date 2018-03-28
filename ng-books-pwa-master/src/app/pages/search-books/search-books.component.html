@@ -1,0 +1,11 @@
+<md-card>
+  <md-card-title>Search Books</md-card-title>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput (ngModelChange)="onSearchTextChange(searchText)" [(ngModel)]="searchText" placeholder="Search books" [value]="searchText">
+    </md-input-container>
+    <md-spinner [class.show]="searching"></md-spinner>
+  </md-card-content>
+</md-card>
+
+<ngb-books-list [books]="books"></ngb-books-list>

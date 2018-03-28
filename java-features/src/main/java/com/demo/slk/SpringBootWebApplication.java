@@ -17,5 +17,4 @@ public class SpringBootWebApplication{
     	application.setBanner(new CustomBanner());
     	application.run(args);
     }
-
 }

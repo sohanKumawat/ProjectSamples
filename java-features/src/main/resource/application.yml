@@ -1,9 +1,5 @@
-kafka:
-  bootstrap-servers: localhost:9092
-  topic:
-    helloworld: helloworld.t
-server:
-  session:
-    cookie:
-      max-age: 10
-    timeout: 10 
+spring:
+    profiles:
+        active: dev
+    resources.add-mappings: false  
+    mvc.throw-exception-if-no-handler-found: true  
