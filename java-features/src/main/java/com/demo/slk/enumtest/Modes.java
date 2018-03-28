@@ -17,6 +17,9 @@ public enum Modes {
 	 private Modes(final String value) {
 	  this.value = value;
 	 } 
+	 public void doSomething(){
+		 System.out.println("inside the do something");
+	 }
 	 public static Modes getModeType(String value) {
 			if (value != null) {
 				for (Modes mode : Modes.values()) {

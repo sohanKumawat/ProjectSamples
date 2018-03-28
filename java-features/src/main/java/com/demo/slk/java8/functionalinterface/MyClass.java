@@ -5,6 +5,10 @@ import java.util.List;
 
 public class MyClass implements Interface1, Interface2 {
 
+	
+	public void TestException() throws Exception{
+		throw new Exception("Throw exception");
+	}
 	@Override
 	public void method2() {
 		
@@ -13,6 +17,7 @@ public class MyClass implements Interface1, Interface2 {
 	@Override
 	public void method1(String str) {
 	}
+	
 
 	//MyClass won't compile without having it's own log() implementation
 	@Override
@@ -47,12 +52,13 @@ public class MyClass implements Interface1, Interface2 {
 		    r.run();
 		    System.out.println("lint Size "+lint.size());
 	}
-	public static void main(String[] str){
+	public static void main(String[] str) throws Exception{
 		MyClass myClass=new MyClass();
 		myClass.log("sohan");
 		Interface1 i1 = (s) -> System.out.println("interface method "+s);
 		i1.log("jskcdnkzfnk");
 		myClass.finalVariableDeclaration();
+		myClass.TestException();
 	}
 
 

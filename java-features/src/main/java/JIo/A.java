@@ -11,6 +11,9 @@ public class A {
 	public  void add(){
 		System.out.println("add of A");
 	}
+	/*public final void addfinal(){
+		System.out.println("add of A");
+	}*/
 	public int getX() {
 		return x;
 	}

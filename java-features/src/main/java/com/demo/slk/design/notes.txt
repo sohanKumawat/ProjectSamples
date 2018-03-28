@@ -2,3 +2,5 @@ https://www.dineshonjava.com/microservices-with-spring-boot/
 
 http://www.oodesign.com/
 http://www.oodesign.com/design-principles.html
+http://javarevisited.blogspot.in/2016/06/design-vending-machine-in-java.html
+http://javarevisited.blogspot.in/2012/06/20-design-pattern-and-software-design.html

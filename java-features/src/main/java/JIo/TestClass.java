@@ -9,4 +9,7 @@ public class TestClass{
         Test1 pm3 = new Test1("break");
         pm3.run();
     }
+    public static void main(int argv[]){
+    	
+    }
 }
