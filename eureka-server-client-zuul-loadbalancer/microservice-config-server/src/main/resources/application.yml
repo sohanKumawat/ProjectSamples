@@ -1,0 +1,18 @@
+---
+server:
+   port: 8080
+spring:
+     application:
+              name: service-config-server  
+     cloud:
+       config:
+         enabled: false
+         server:
+            health:
+                enabled: false
+            monitor:
+               github:
+                 enabled: true
+            git:
+              uri: https://github.com/sohanKumawat/service-config-repo.git
+...        

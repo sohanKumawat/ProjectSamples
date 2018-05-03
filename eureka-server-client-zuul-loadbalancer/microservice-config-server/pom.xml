@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>mb.com</groupId>
-	<artifactId>microservice-management-server</artifactId>
+	<groupId>com.milkbasket</groupId>
+	<artifactId>microservice-config-server</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>Eureka-Service-Management-server</name>
-	<description>Eureka Micro Service Management Server</description>
+	<name>microservice-config-server</name>
+	<description>Microservice configuration Server</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -29,17 +29,16 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>4.9.2.201712150930-r</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-cloud-config-client</artifactId>
 		</dependency>
 	</dependencies>
 
