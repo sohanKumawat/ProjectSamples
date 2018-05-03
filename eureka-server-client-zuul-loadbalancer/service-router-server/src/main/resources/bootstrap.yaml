@@ -1,6 +1,5 @@
 ---
-
- spring:
+spring:
      application:
               name: service-router-server
      cloud:
