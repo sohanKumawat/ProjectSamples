@@ -1,0 +1,40 @@
+---
+
+ server:
+     port: 8099
+ spring:
+     application:
+              name: service-router-server
+ endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+ zuul:
+   prefix: /api/v1
+   stripPrefix: false
+   routes:
+     order: 
+       path: /**
+       serviceId: order-management-service
+#       url: http://localhost:8085
+     customer: 
+       path: /**
+       serviceId: customer-management-service
+     analytics: 
+       path: /**
+       serviceId: analytics-management-service
+                
+ ribbon:
+  eureka:
+    enabled: true
+    
+ eureka:
+     client:
+         service-url:
+                  default-zone: http://localhost:8761/eureka
+         registerWithEureka: false         
+...
