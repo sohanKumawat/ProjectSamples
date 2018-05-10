@@ -14,5 +14,5 @@ spring:
                github:
                  enabled: true
             git:
-              uri: https://github.com/sohanKumawat/service-config-repo.git
+              uri: /Users/sohankumawat/Desktop/service-config-repo
 ...        
