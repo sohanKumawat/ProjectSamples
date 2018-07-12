@@ -16,8 +16,8 @@ public class NodeProductMappingService implements BasePickerServcie<NodeProductM
 
 
 	@Override
-	public void add(NodeProductMappingEntity entity) {
-		repository.save(entity);
+	public NodeProductMappingEntity add(NodeProductMappingEntity entity) {
+		return repository.save(entity);
 
 	}
 
@@ -37,8 +37,8 @@ public class NodeProductMappingService implements BasePickerServcie<NodeProductM
 	}
 
 	@Override
-	public void update(NodeProductMappingEntity entity) {
-		repository.save(entity);
+	public NodeProductMappingEntity update(NodeProductMappingEntity entity) {
+		return repository.save(entity);
 
 	}
 

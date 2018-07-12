@@ -15,8 +15,8 @@ public class ScannerDataService implements BasePickerServcie<ItemScannerEntity> 
 	ScannerDataRepository repository;
 
 	@Override
-	public void add(ItemScannerEntity entity) {
-		repository.save(entity);
+	public ItemScannerEntity add(ItemScannerEntity entity) {
+		return repository.save(entity);
 
 	}
 
@@ -36,8 +36,8 @@ public class ScannerDataService implements BasePickerServcie<ItemScannerEntity> 
 	}
 
 	@Override
-	public void update(ItemScannerEntity entity) {
-		repository.save(entity);
+	public ItemScannerEntity update(ItemScannerEntity entity) {
+		return repository.save(entity);
 
 	}
 

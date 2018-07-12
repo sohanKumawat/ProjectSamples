@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerOrderProducts implements Serializable {
+public class OrderProduct implements Serializable {
 
 	/**
 	 * 
@@ -43,7 +43,7 @@ public class CustomerOrderProducts implements Serializable {
 			return true;
 		if (obj == null || obj.getClass() != this.getClass())
 			return false;
-		CustomerOrderProducts product = (CustomerOrderProducts) obj;
+		OrderProduct product = (OrderProduct) obj;
 		return (product.productId == this.productId && product.productId == this.productId);
 	}
 

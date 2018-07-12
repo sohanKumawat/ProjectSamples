@@ -3,6 +3,8 @@ package com.mb.demo.entity.common.picker;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +33,8 @@ public class PickerProductStatusEntity extends BaseOperationEntity implements Se
 	private int acceptedProductQuantity = 0;
 	private int remainingProductQuantity = 0;
 	private int naItemQuantity;
-	private OperationType picker_type;
+	@Enumerated(EnumType.STRING)
+	private OperationType pickerType = OperationType.SAPICKER;
 
 	// private long availableQuantity;
 	public long getRemainingItemQuantity() {

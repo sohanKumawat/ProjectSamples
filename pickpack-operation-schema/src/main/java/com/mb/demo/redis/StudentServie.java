@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.mb.demo.redis.Student.Gender;
 import com.mb.demo.redis.beans.Address;
 import com.mb.demo.redis.beans.CustomerOrder;
-import com.mb.demo.redis.beans.CustomerOrderProducts;
+import com.mb.demo.redis.beans.OrderProduct;
 import com.mb.demo.redis.beans.HubTeamOrderEntity;
 import com.mb.demo.redis.repository.HubTeamOrderRepository;
 

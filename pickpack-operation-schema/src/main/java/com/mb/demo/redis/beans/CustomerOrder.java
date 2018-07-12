@@ -21,9 +21,9 @@ public class CustomerOrder {
 	private long hubId;
 	private long towerId;
 	private long societyId;
-	private List<CustomerOrderProducts> products;
+	private List<OrderProduct> products;
 
-	public void addProduct(CustomerOrderProducts product) {
+	public void addProduct(OrderProduct product) {
 		if (CollectionUtils.isEmpty(products))
 			products = new ArrayList<>();
 		products.add(product);

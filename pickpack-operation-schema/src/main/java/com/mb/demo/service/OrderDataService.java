@@ -15,8 +15,8 @@ public class OrderDataService implements BasePickerServcie<OrderAssetItemStoreEn
 	OrderDataProcessingRepository repository;
 
 	@Override
-	public void add(OrderAssetItemStoreEntity entity) {
-		repository.save(entity);
+	public OrderAssetItemStoreEntity add(OrderAssetItemStoreEntity entity) {
+		return repository.save(entity);
 
 	}
 
@@ -36,8 +36,8 @@ public class OrderDataService implements BasePickerServcie<OrderAssetItemStoreEn
 	}
 
 	@Override
-	public void update(OrderAssetItemStoreEntity entity) {
-		repository.save(entity);
+	public OrderAssetItemStoreEntity update(OrderAssetItemStoreEntity entity) {
+		return repository.save(entity);
 
 	}
 

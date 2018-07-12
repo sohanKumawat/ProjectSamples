@@ -3,6 +3,8 @@ package com.mb.demo.entity.common.node;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,15 +30,19 @@ public class NodeStorageDataEntity extends BaseEntity implements Serializable {
 	private long id;
 	private long hubId;
 	private String sheet;
+	@Enumerated(EnumType.STRING)
 	private StorageNode type;
 	private String name;
 	private String title;
 	private String parentId;
+	@Enumerated(EnumType.STRING)
 	private StorageNode parentType;
 	private String trackerNumber;
 	private String scannerCode;
+	@Enumerated(EnumType.STRING)
 	private OperationType nodeArea;
 	private String description;
+	@Enumerated(EnumType.STRING)
 	private StorageNode storageItemType;// right now is not required
 
 }

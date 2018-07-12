@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface BasePickerServcie<T> {
 
-	public void add(T t);
+	public T add(T t);
 
 	public T getById(long id);
 
@@ -12,5 +12,5 @@ public interface BasePickerServcie<T> {
 
 	public void deleteById(long id);
 
-	public void update(T t);
+	public T update(T t);
 }

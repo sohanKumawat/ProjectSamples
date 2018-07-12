@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mb.demo.redis.beans.CustomerOrder;
-import com.mb.demo.redis.beans.CustomerOrderProducts;
+import com.mb.demo.redis.beans.OrderProduct;
 import com.mb.demo.redis.beans.HubTeamOrderEntity;
 import com.mb.demo.redis.repository.OrderDataRepository;
 import com.mb.demo.redis.rowmapper.OrderProductMapper;
@@ -82,7 +82,7 @@ public class RedisOrderDataService {
 	}
 
 	public void addOrderProduct(OrderProductData orderProduct, CustomerOrder customerOrder) {
-		CustomerOrderProducts product = CustomerOrderProducts.builder().productId(orderProduct.getProductId())
+		OrderProduct product = OrderProduct.builder().productId(orderProduct.getProductId())
 				.hubId(orderProduct.getHub_id()).sheet(orderProduct.getSheet()).name(orderProduct.getName())
 				.size(orderProduct.getSize()).scannerCode(orderProduct.getScannerCode())
 				.categoryId(orderProduct.getCategoryId()).subcategoryId(orderProduct.getSubCategoryId())

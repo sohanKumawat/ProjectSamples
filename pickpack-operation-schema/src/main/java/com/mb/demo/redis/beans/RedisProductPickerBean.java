@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RedisProductPickerBean extends CustomerOrderProducts implements Serializable {
+@EqualsAndHashCode(callSuper=false)
+public class RedisProductPickerBean extends OrderProduct implements Serializable {
 
 	private static final long serialVersionUID = 8623632191628663153L;
 

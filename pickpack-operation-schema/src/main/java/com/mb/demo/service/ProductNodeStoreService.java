@@ -16,8 +16,8 @@ public class ProductNodeStoreService implements BasePickerServcie<ProductNodeSto
 	ProductNodeStoreRepository repository;
 
 	@Override
-	public void add(ProductNodeStoreEntity entity) {
-		repository.save(entity);
+	public ProductNodeStoreEntity add(ProductNodeStoreEntity entity) {
+		return repository.save(entity);
 
 	}
 
@@ -37,39 +37,48 @@ public class ProductNodeStoreService implements BasePickerServcie<ProductNodeSto
 	}
 
 	@Override
-	public void update(ProductNodeStoreEntity entity) {
-		repository.save(entity);
+	public ProductNodeStoreEntity update(ProductNodeStoreEntity entity) {
+		return repository.save(entity);
 
 	}
 
-	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndSheet(long productId, long hubId,
-			long teamId, String sheet) {
-		return repository.findByProductIdAndHubIdAndTeamIdAndSheet(productId, hubId, teamId, sheet);
-	}
-	
-	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndSheetAndNodeArea(long productId, long hubId,
-			long teamId, String sheet,OperationType nodeArea) {
-		return repository.findByProductIdAndHubIdAndTeamIdAndSheetAndNodeArea(productId, hubId, teamId, sheet,nodeArea);
-	}
-	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndNodeIdAndSheet(long productId, long hubId,
-			long teamId,long nodeId, String sheet) {
+	public List<ProductNodeStoreEntity> findProducts(long productId, long hubId, long teamId, String sheet) {
 		return repository.findByProductIdAndHubIdAndTeamIdAndSheet(productId, hubId, teamId, sheet);
 	}
 
-	public List<ProductNodeStoreEntity> findByNodeId(long nodeId) {
+	public List<ProductNodeStoreEntity> findProducts(long productId, long hubId, long teamId, String sheet,
+			OperationType nodeArea) {
+		return repository.findByProductIdAndHubIdAndTeamIdAndSheetAndNodeArea(productId, hubId, teamId, sheet,
+				nodeArea);
+	}
+
+	public List<ProductNodeStoreEntity> findProducts(long productId, long hubId, long teamId, long nodeId,
+			String sheet) {
+		return repository.findByProductIdAndHubIdAndTeamIdAndNodeIdAndSheet(productId, hubId, teamId, nodeId, sheet);
+	}
+
+	public List<ProductNodeStoreEntity> findProducts(long nodeId) {
 		return repository.findByNodeId(nodeId);
 	}
 
-	public List<ProductNodeStoreEntity> findByProductIdAndHubId(long productId, long hubId) {
+	public List<ProductNodeStoreEntity> findProducts(long productId, long hubId) {
 		return repository.findByProductIdAndHubId(productId, hubId);
 	}
 
-	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndNodeId(long productId, long hubId, long nodeId) {
+	public List<ProductNodeStoreEntity> findProducts(long productId, long hubId, long nodeId) {
 		return repository.findByProductIdAndHubIdAndNodeId(productId, hubId, nodeId);
 	}
 
-	public List<ProductNodeStoreEntity> findByNodeIdAndNodeArea(long nodeId, OperationType nodeArea) {
+	public List<ProductNodeStoreEntity> findProducts(long nodeId, OperationType nodeArea) {
 		return repository.findByNodeIdAndNodeArea(nodeId, nodeArea);
+	}
+
+	public List<ProductNodeStoreEntity> findProducts(long hubId, long nodeId, OperationType nodeArea) {
+		return repository.findByHubIdAndNodeIdAndNodeArea(hubId, nodeId, nodeArea);
+	}
+
+	public List<ProductNodeStoreEntity> findProducts(long hubId, long teamId, String sheet, OperationType nodeArea) {
+		return repository.findByHubIdAndTeamIdAndSheetAndNodeArea(hubId, teamId, sheet, nodeArea);
 	}
 
 }

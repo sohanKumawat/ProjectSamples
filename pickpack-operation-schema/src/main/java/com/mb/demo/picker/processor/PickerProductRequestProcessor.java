@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mb.demo.constants.PickPackConstants.OperationType;
-import com.mb.demo.redis.beans.CustomerOrderProducts;
+import com.mb.demo.redis.beans.OrderProduct;
 import com.mb.demo.redis.beans.PickerProductLocationBean;
 import com.mb.demo.redis.processor.TeamOrderAndProductService;
 import com.mb.demo.redis.processor.processor;
@@ -26,7 +26,7 @@ public class PickerProductRequestProcessor {
 			String nodeId, String clusterId, String sheet) {
 
 		List<PickerProductLocationBean> pickerProductBean = null;
-		List<CustomerOrderProducts> pickerProducts = null;
+		List<OrderProduct> pickerProducts = null;
 		switch (pickerType) {
 		case SAPICKER:
 			pickerProducts = saPickerRequestProcess(hubId, teamId, nodeId, clusterId, sheet);
@@ -46,21 +46,24 @@ public class PickerProductRequestProcessor {
 		return pickerProductBean;
 	}
 
-	public List<CustomerOrderProducts> saPickerRequestProcess(long hubId, long teamId, String nodeId, String clusterId,
+	public List<OrderProduct> saPickerRequestProcess(long hubId, long teamId, String nodeId, String clusterId,
 			String sheet) {
 		if (null == clusterId && null != sheet) {
-			return teamOrderAndProductService.getTeamProductsBySheet(teamId, hubId, sheet);
+			return teamOrderAndProductService.getTeamProducts(teamId, hubId, sheet);
 		} else if (null == clusterId && sheet == null) {
 			return teamOrderAndProductService.getTeamProducts(teamId, hubId);
 		} else if (null == sheet && null != clusterId) {
-			return teamOrderAndProductService.getTeamProductByClusterId(teamId, hubId, Long.parseLong(clusterId));
+			return teamOrderAndProductService.getTeamProducts(teamId, hubId, Long.parseLong(clusterId));
 		}
-		return teamOrderAndProductService.getTeamProductBySheetAndClusterId(teamId, hubId, sheet,
-				Long.parseLong(clusterId));
+		return teamOrderAndProductService.getTeamProducts(teamId, hubId, sheet, Long.parseLong(clusterId));
 
 	}
 
-	public List<CustomerOrderProducts> faPickerRequestProcess(long hubId, long teamId, String nodeId, String clusterId,
+	public void mergerPickerProductWithStatus() {
+
+	}
+
+	public List<OrderProduct> faPickerRequestProcess(long hubId, long teamId, String nodeId, String clusterId,
 			String sheet) {
 		return null;
 	}

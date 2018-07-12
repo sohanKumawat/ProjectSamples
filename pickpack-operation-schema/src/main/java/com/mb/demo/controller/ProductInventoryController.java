@@ -15,7 +15,7 @@ import com.mb.demo.entity.common.ProductEntity;
 import com.mb.demo.service.ProductInventoryService;
 
 @RestController
-@RequestMapping("metadata/product")
+@RequestMapping("/v1/metadata/product")
 public class ProductInventoryController {
 
 	@Autowired

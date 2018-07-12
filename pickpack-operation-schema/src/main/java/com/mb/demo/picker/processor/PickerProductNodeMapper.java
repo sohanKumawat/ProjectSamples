@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mb.demo.redis.beans.CustomerOrderProducts;
+import com.mb.demo.redis.beans.OrderProduct;
 import com.mb.demo.redis.beans.PickerProductLocationBean;
 import com.mb.demo.redis.beans.ProductLocationBean;
 import com.mb.demo.redis.beans.RedisNodeItemMetaDataEntity;
@@ -23,7 +23,7 @@ public class PickerProductNodeMapper {
 		return redisNodeService.findProductNodeByNodeId(nodeId);
 	}
 
-	public List<PickerProductLocationBean> pickerProductWithStoreLocation(List<CustomerOrderProducts> teamProducts,
+	public List<PickerProductLocationBean> pickerProductWithStoreLocation(List<OrderProduct> teamProducts,
 			long nodeId) {
 
 		List<RedisNodeItemMetaDataEntity> productNodes = findProductNodeByNodeId(nodeId);
@@ -56,7 +56,7 @@ public class PickerProductNodeMapper {
 		return pickerProductList;
 	}
 
-	public PickerProductLocationBean generateProductLocationBean(CustomerOrderProducts orderProduct,
+	public PickerProductLocationBean generateProductLocationBean(OrderProduct orderProduct,
 			RedisNodeItemMetaDataEntity nodeLocation) {
 		System.out.println("Inside the generateProductLocationBean");
 		// CustomerOrderProducts orderproduct = orderProduct;
@@ -65,8 +65,10 @@ public class PickerProductNodeMapper {
 				.locationName(nodeLocation.getName()).locationScannerCode(nodeLocation.getScannerCode())
 				.locationTitle(nodeLocation.getTitle()).locationTrackerNumber(nodeLocation.getTrackerNumber())
 				.productId(nodeLocation.getProductId()).build();
+		List<ProductLocationBean> productLocationList = new ArrayList<>();
+		productLocationList.add(productLocation);
 		PickerProductLocationBean pickerProductLocation = PickerProductLocationBean.builder().orderproduct(orderProduct)
-				.productLocation(productLocation).build();
+				.productLocation(productLocationList).build();
 		return pickerProductLocation;
 	}
 }

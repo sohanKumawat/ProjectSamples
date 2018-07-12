@@ -15,8 +15,8 @@ public class AssetDataService implements BasePickerServcie<AssetMedaDataEntity> 
 	AssetDataRepository repository;
 
 	@Override
-	public void add(AssetMedaDataEntity entity) {
-		repository.save(entity);
+	public AssetMedaDataEntity add(AssetMedaDataEntity entity) {
+		return repository.save(entity);
 
 	}
 
@@ -36,8 +36,8 @@ public class AssetDataService implements BasePickerServcie<AssetMedaDataEntity> 
 	}
 
 	@Override
-	public void update(AssetMedaDataEntity entity) {
-		repository.save(entity);
+	public AssetMedaDataEntity update(AssetMedaDataEntity entity) {
+		return repository.save(entity);
 
 	}
 

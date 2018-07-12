@@ -7,6 +7,7 @@ import com.mb.demo.constants.PickPackConstants.OperationType;
 import lombok.Data;
 import lombok.experimental.Builder;
 
+@SuppressWarnings("deprecation")
 @Data
 @Builder
 public class ProductLocationBean implements Serializable {

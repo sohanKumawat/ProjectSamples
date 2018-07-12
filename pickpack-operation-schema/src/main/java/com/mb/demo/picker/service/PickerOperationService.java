@@ -5,40 +5,41 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mb.demo.constants.PickPackConstants.OperationType;
+import com.mb.demo.entity.common.node.ProductNodeStoreEntity;
 import com.mb.demo.entity.common.picker.PickerProductStatusEntity;
-import com.mb.demo.repository.picker.PickerProductStratusRepository;
-import com.mb.demo.service.BasePickerServcie;
+import com.mb.demo.picker.processor.PickerOperationStatusProcessor;
+import com.mb.demo.service.PickerProductStatusService;
 
 @Service
-public class PickerOperationService implements BasePickerServcie<PickerProductStatusEntity> {
+public class PickerOperationService {
 
 	@Autowired
-	PickerProductStratusRepository repository;
+	PickerProductStatusService pickerProductStatusService;
+	@Autowired
+	PickerOperationStatusProcessor pickerOperationProcessor;
 
-	@Override
-	public void add(PickerProductStatusEntity entity) {
-		repository.save(entity);
-
+	public ProductNodeStoreEntity updateProductNodeStore(ProductNodeStoreEntity productNodeStore, String scannerCode) {
+		return pickerOperationProcessor.updateProductNodeStore(productNodeStore, scannerCode);
 	}
 
-	@Override
-	public PickerProductStatusEntity getById(long id) {
-		return repository.findById(id).orElse(null);
+	public List<ProductNodeStoreEntity> findNodeProductStore(long hubId, long teamId, long productId, String sheet,
+			OperationType pickerType) {
+
+		return pickerOperationProcessor.findNodeProductStore(hubId, teamId, productId, sheet, pickerType);
 	}
 
-	@Override
-	public List<PickerProductStatusEntity> getAll() {
-		return repository.findAll();
+	public List<ProductNodeStoreEntity> findNodeProductStore(long hubId, long teamId, long productId, String sheet) {
+		return pickerOperationProcessor.findNodeProductStore(hubId, teamId, productId, sheet);
 	}
 
-	@Override
-	public void deleteById(long id) {
-		repository.deleteById(id);
+	public List<PickerProductStatusEntity> findPickerProductStatus(long hubId, long teamId, String sheet,
+			OperationType pickerType, String createdOn) {
+		return pickerProductStatusService.findPickerProductStatus(hubId, teamId, sheet, pickerType, createdOn);
 	}
 
-	@Override
-	public void update(PickerProductStatusEntity entity) {
-		repository.save(entity);
-
+	public PickerProductStatusEntity updatePickerProductStatus(PickerProductStatusEntity ppStatusEntity) {
+		return pickerProductStatusService.add(ppStatusEntity);
 	}
+
 }

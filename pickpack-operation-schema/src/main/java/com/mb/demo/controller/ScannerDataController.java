@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class ScannerDataController implements BasePickerController {
 	@Autowired
 	 ScannerDataService service;
 
-	@GetMapping("/add")
+	@PostMapping("/")
 	public ResponseEntity<String> add(@RequestBody ItemScannerEntity entity) {
 		service.add(entity);
 		return new ResponseEntity<>("Added successFulle", HttpStatus.OK);

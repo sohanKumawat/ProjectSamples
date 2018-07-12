@@ -3,6 +3,8 @@ package com.mb.demo.entity.common.node;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,12 +29,19 @@ public class ProductNodeStoreEntity extends BaseEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private long nodeId;
+	private String nodeTracker;
+	private String nodeScannerCode;
 	private long productId;
 	private long hubId;
 	private long teamId;
+	@Enumerated(EnumType.STRING)
 	private OperationType nodeArea;
 	private String sheet;
 	private int totalQuantity;//
 	private int availableQuantity;//
 	private int inUseQuantity;
+
+	public static ProductNodeStoreEntity newInstance() {
+		return new ProductNodeStoreEntity();
+	}
 }

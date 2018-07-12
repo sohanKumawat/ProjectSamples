@@ -14,6 +14,9 @@ public interface ProductNodeStoreRepository extends JpaRepository<ProductNodeSto
 	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndSheet(long productId, long hubId,
 			long teamId, String sheet);
 
+	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndNodeIdAndSheet(long productId, long hubId,
+			long teamId, long nodeId, String sheet);
+
 	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndTeamIdAndSheetAndNodeArea(long productId, long hubId,
 			long teamId, String sheet, OperationType nodeArea);
 
@@ -24,5 +27,11 @@ public interface ProductNodeStoreRepository extends JpaRepository<ProductNodeSto
 	public List<ProductNodeStoreEntity> findByProductIdAndHubIdAndNodeId(long productId, long hubId, long nodeId);
 
 	public List<ProductNodeStoreEntity> findByNodeIdAndNodeArea(long nodeId, OperationType nodeArea);
+
+	public List<ProductNodeStoreEntity> findByHubIdAndNodeIdAndNodeArea(long hubId, long nodeId,
+			OperationType nodeArea);
+
+	public List<ProductNodeStoreEntity> findByHubIdAndTeamIdAndSheetAndNodeArea(long hubId, long teamId, String sheet,
+			OperationType nodeArea);
 
 }
