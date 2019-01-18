@@ -1,0 +1,33 @@
+---
+ server:
+     port: 8094
+ spring:
+     application:
+              name: pick-pack-service
+              #Logging management setting priority wise trace, debug,info,error,fetal,off
+     mvc:
+      throw-exception-if-no-handler-found: true
+      resources.add-mappings: false  
+      datasource:
+             url: jdbc:mysql://localhost:3306/pick-pack-db
+             username: root
+             password: 
+             driver-class-name: com.mysql.jdbc.Driver
+             testWhileIdle: true
+             validationQuery: SELECT 1
+     data:
+       jpa:
+        repositories.enabled: true 
+     jpa:
+       show-sql: false  
+       hibernate.ddl-auto: create
+        
+ logging:
+      level:
+         org.springframework.web: ERROR
+         mb:
+           com:
+            app: DEBUG
+      file: ${java.io.tmpdir}/${spring.application.name}.log
+
+...

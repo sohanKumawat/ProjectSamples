@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mb.swagger</groupId>
+		<artifactId>client-demo</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>swagger-coupon-api</artifactId>
+	<name>swagger-coupon-api</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-codegen-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${milkbasket.swagger.baseUrl}/swagger-coupon.json</inputSpec>
+							<language>java</language>
+							<!-- <library>resttemplate</library>
+							<packageName>com.milkbasket.api.user.client</packageName>
+							<modelPackage>com.milkbasket.api.user.client.models</modelPackage>
+							<modelNamePrefix>Api</modelNamePrefix>
+							<apiPackage>com.milkbasket.api.user.client.service</apiPackage> -->
+							<generateApiTests>false</generateApiTests>
+							<generateModelTests>false</generateModelTests>
+							<generateModelDocumentation>false</generateModelDocumentation>
+							<generateApiDocumentation>false</generateApiDocumentation>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

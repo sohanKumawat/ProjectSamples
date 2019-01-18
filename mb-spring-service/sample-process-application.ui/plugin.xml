@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="sample-pick-pack-application.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="sample-pick-pack-application.ui.popupMenus.AcceleoGenerateSamplePickPackApplicationAction"
+               enablesFor="+"
+               id="sample-pick-pack-application.ui.popupMenus.acceleoGenerateSamplePickPackApplicationAction"
+               icon="icons/default.gif"
+               label="Generate Sample Pick Pack Application"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>
