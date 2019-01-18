@@ -2,7 +2,7 @@ package com.demo.slk.java8.functionalinterface;
 @FunctionalInterface
 public interface Interface1 {
 
-	void method1(String str);
+	void method(String str);
 	
 	default void log(String str){
 		System.out.println("I1 logging::"+str);

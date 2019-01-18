@@ -33,11 +33,9 @@ public class TestClass{
         Test1 pm3 = new Test1("break");
         pm3.run();
     }
-<<<<<<< HEAD
     public static void main(int argv[]){
     	
     }
-=======
     void testARM_Java9() throws IOException{
     	/* BufferedReader reader1 = new BufferedReader(new FileReader("journaldev.txt"));
     	 try (BufferedReader reader2 = reader1) {
@@ -66,5 +64,4 @@ public class TestClass{
 		}
 	};
 
->>>>>>> fb8a03b2122c7a507e867188e7957210873db0fa
 }

@@ -9,14 +9,6 @@ public class MyClass implements Interface1, Interface2 {
 	public void TestException() throws Exception{
 		throw new Exception("Throw exception");
 	}
-	@Override
-	public void method2() {
-		
-	}
-
-	@Override
-	public void method1(String str) {
-	}
 	
 
 	//MyClass won't compile without having it's own log() implementation
@@ -59,6 +51,11 @@ public class MyClass implements Interface1, Interface2 {
 		i1.log("jskcdnkzfnk");
 		myClass.finalVariableDeclaration();
 		myClass.TestException();
+	}
+	@Override
+	public void method(String str) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

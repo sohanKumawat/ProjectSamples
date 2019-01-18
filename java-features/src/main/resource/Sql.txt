@@ -26,9 +26,7 @@ employee salary greater then his manager ->
           p from score group by type) as s2 on s1.point =s2.p where s1.type=s2.type) as sa inner join 
           (select s1.* from score s1 inner join (select type ,min(point) as p 
            from score group by type) as s2 on s1.point =s2.p where s1.type=s2.type) as sb on sa.type=sb.type;
-           
-           
-           
+        
      select t1.eid,t1.employeeName,t1.primarySkill_Id,t1.primary_skill,t2.secondarySkill_Id,t2.secondary_skill 
      from (select e.eid,e.name as 'employeeName',s.sid as 'primarySkill_Id',s.name as 'primary_skill' 
      from employee e,skill s, employeeskill es where e.eid=es.eid and s.sid=es.sid and es.isPrimary=1) as t1 
